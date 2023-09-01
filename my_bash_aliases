@@ -1,0 +1,21 @@
+# -------------------------------------
+# ----- Primary bash_aliases file -----
+# -------------------------------------
+
+# note: to link to this file from your local bashrc, add
+# source /path/to/this/file
+
+alias 'cls'='clear'
+alias 'll'='ls -lh'
+alias 'la'='ls -a'
+alias 'python'='python3'
+alias 'py'='python3'
+alias 'peep'='vim -R' # lol
+
+# if nvim is installed, "vim" should be an alias for "nvim"
+# (the "2>&1" stuff just combines stdout and stderr into a single stream)
+# if command -v nvim > /dev/null 2>&1; then
+# alias 'vim'='nvim'
+# else
+# alias 'vim'='vim'
+# fi

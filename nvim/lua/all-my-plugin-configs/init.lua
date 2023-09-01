@@ -1,0 +1,8 @@
+require("all-my-plugin-configs.lualine")
+require("all-my-plugin-configs.nvim-tree")
+require("all-my-plugin-configs.catppuccin")
+require("all-my-plugin-configs.treesitter")
+require("all-my-plugin-configs.telescope")
+require("all-my-plugin-configs.lsp-zero")
+require("all-my-plugin-configs.comment")
+require("all-my-plugin-configs.gitsigns")
