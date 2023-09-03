@@ -15,6 +15,10 @@ If the appimage doesn't work, you'll have to build from source.
 Not too complicated - just follow the instructions on the neovim github, making sure
 to consider installing it in the way that allows for uninstalling.
 
+# Windows installation
+The default location for init.lua is AppData/Local/nvim/init.lua.
+It also complains about a C compiler, but I just disable nvim-treesitter on windows.
+
 ---
 
 # File structure explained

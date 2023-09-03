@@ -15,7 +15,12 @@ vim.opt.mouse = ""
 -- disable line wrapping.
 vim.opt.wrap = false
 -- break up text onto the next line after 100 characters
--- vim.opt.textwidth = 100
+-- this applies to comments if 'c' is a formatoption; it applies to normal text if 't' is set
+vim.opt.textwidth = 100
+-- see :h fo-table for information about this stuff
+-- basically, you want 'r' enabled so that comments are continued in insert mode
+-- but you want 'o' disabled so that comments do not continue when using the 'o' motion
+vim.opt.formatoptions = "jcrlq"
 
 -- big column at 100 chars
 vim.opt.colorcolumn = "100"
