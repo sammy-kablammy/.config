@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'nvim-lualine/lualine.nvim'
     use 'nvim-tree/nvim-tree.lua'
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitfalseter/nvim-treesitter', run = ':TSUpdate' }
     use 'nvim-tree/nvim-web-devicons'
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
@@ -55,6 +55,14 @@ return require('packer').startup(function(use)
     }
     use 'lewis6991/gitsigns.nvim'
     use 'ThePrimeagen/vim-be-good'
+    -- Lua
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
