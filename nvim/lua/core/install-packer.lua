@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'nvim-lualine/lualine.nvim'
     use 'nvim-tree/nvim-tree.lua'
-    use { 'nvim-treesitfalseter/nvim-treesitter', run = ':TSUpdate' }
+    use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-tree/nvim-web-devicons'
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
