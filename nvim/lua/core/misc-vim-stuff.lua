@@ -20,13 +20,8 @@ vim.opt.textwidth = 100
 -- see :h fo-table for information about this stuff
 -- basically, you want 'r' enabled so that comments are continued in insert mode
 -- but you want 'o' disabled so that comments do not continue when using the 'o' motion
-vim.opt.formatoptions = {
-    c = true,
-    r = true,
-    j = true,
-    l = true,
-    q = true
-}
+-- also you need to use an autocmd because "vim.opt.formatoptions" gets overwritten somehow :(
+vim.cmd[[autocmd VimEnter * set formatoptions=crjlq]]
 
 -- big column at 100 chars
 vim.opt.colorcolumn = "100"
