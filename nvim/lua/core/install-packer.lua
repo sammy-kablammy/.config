@@ -63,6 +63,8 @@ return require('packer').startup(function(use)
             vim.o.timeoutlen = 300
         end
     }
+    use "ggandor/leap.nvim"
+    use 'folke/todo-comments.nvim'
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

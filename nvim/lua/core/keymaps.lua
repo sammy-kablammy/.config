@@ -3,7 +3,7 @@
 vim.g.mapleader = ' '
 
 -- quick :source command to reload stuff quickly while configuring
-vim.keymap.set('n', '<leader>s', ':source<cr>')
+-- vim.keymap.set('n', '<leader>s', ':source<cr>')
 
 -- easier navigation between windows
 vim.keymap.set('n', '<c-h>', '<c-w>h')
@@ -12,7 +12,7 @@ vim.keymap.set('n', '<c-k>', '<c-w>k')
 vim.keymap.set('n', '<c-l>', '<c-w>l')
 
 -- easily open my help files
-vim.keymap.set('n', '<leader>hv', '<cmd>vsplit ~/.config/quick_reference/vim_quick_reference.md<cr>')
+vim.keymap.set('n','<leader>hv', '<cmd>vsplit ~/.config/quick_reference/vim_quick_reference.md<cr>')
 vim.keymap.set('n', '<leader>hn', '<cmd>vsplit ~/.config/quick_reference/neovim_quick_reference.md<cr>')
 vim.keymap.set('n', '<leader>hb', '<cmd>vsplit ~/.config/quick_reference/bash_quick_reference.md<cr>')
 vim.keymap.set('n', '<leader>ht', '<cmd>vsplit ~/.config/quick_reference/tmux_quick_reference.md<cr>')

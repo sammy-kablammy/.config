@@ -79,6 +79,10 @@ To format, use F3
 use gcc to toggle comments on the current line
 or, if you'd rather select some lines in visual line mode, use gc
 
+# Leap.nvim
+use <leader>s to search for a character.
+then you can use <space> to jump to the next group, or <tab> for previous group
+
 # Extra notes
 In order for nvim-tree to display the cute little icons, you'll need a Nerd Font. See bash quick reference.
 
@@ -91,3 +95,5 @@ To see normal mode bindings, do ?
 
 Note that in order to use telescope's fuzzy finding within files (default is <leader>fg),
 you'll need to install the ripgrep package. this is on your machine, not in nvim.
+
+I've added <leader>td to open the TODOs list

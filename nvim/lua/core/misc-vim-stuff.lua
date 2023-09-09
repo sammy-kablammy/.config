@@ -17,11 +17,14 @@ vim.opt.wrap = false
 -- break up text onto the next line after 100 characters
 -- this applies to comments if 'c' is a formatoption; it applies to normal text if 't' is set
 vim.opt.textwidth = 100
+
 -- see :h fo-table for information about this stuff
 -- basically, you want 'r' enabled so that comments are continued in insert mode
 -- but you want 'o' disabled so that comments do not continue when using the 'o' motion
 -- also you need to use an autocmd because "vim.opt.formatoptions" gets overwritten somehow :(
-vim.cmd[[autocmd VimEnter * set formatoptions=crjlq]]
+vim.api.nvim_create_autocmd({"BufEnter"}, {
+    command = "set formatoptions=jcrql"
+})
 
 -- big column at 100 chars
 vim.opt.colorcolumn = "100"
