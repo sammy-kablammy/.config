@@ -25,7 +25,7 @@ vim.keymap.set('n', '<leader>bn', '<cmd>bn<cr>')
 vim.keymap.set('n', '<leader>bp', '<cmd>bp<cr>')
 
 -- Save file remaps
-vim.keymap.set('n', 'ZW', '<cmd>:w<cr>')
+-- vim.keymap.set('n', 'ZW', '<cmd>:w<cr>')
 vim.keymap.set('n', '<leader>w', '<cmd>:w<cr>')
 
 -- move lines up and down, from theprimeagen

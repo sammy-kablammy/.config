@@ -1,7 +1,7 @@
-require("which-key").setup {
+require("which-key").setup(
     {
         plugins = {
-            marks = true,     -- shows a list of your marks on ' and `
+            marks = false,    -- shows a list of your marks on ' and `
             registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
             -- the presets plugin, adds help for a bunch of default keybindings in Neovim
             -- No actual key bindings are created
@@ -42,7 +42,7 @@ require("which-key").setup {
             scroll_up = "<c-u>",   -- binding to scroll up inside the popup
         },
         window = {
-            border = "none",          -- none, single, double, shadow
+            border = "single",        -- none, single, double, shadow
             position = "bottom",      -- bottom, top
             margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
             padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
@@ -64,10 +64,10 @@ require("which-key").setup {
         -- list of triggers, where WhichKey should not wait for timeoutlen and show immediately
         triggers_nowait = {
             -- marks
-            "`",
-            "'",
-            "g`",
-            "g'",
+            -- "`",
+            -- "'",
+            -- "g`",
+            -- "g'",
             -- registers
             '"',
             "<c-r>",
@@ -77,6 +77,7 @@ require("which-key").setup {
         triggers_blacklist = {
             -- list of mode / prefixes that should never be hooked by WhichKey
             -- this is mostly relevant for keymaps that start with a native binding
+            n = { "'", "`" },
             i = { "j", "k" },
             v = { "j", "k" },
         },
@@ -87,4 +88,4 @@ require("which-key").setup {
             filetypes = {},
         },
     }
-}
+)

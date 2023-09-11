@@ -97,3 +97,5 @@ Note that in order to use telescope's fuzzy finding within files (default is <le
 you'll need to install the ripgrep package. this is on your machine, not in nvim.
 
 I've added <leader>td to open the TODOs list
+
+Note: to do case-insensitive search temporarily, type your search and add a '\c' to it.

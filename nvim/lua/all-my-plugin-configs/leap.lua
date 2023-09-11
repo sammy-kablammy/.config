@@ -1,6 +1,7 @@
 -- my config
 
 vim.keymap.set('n', '<leader>s', '<Plug>(leap-forward-to)')
+vim.keymap.set('n', '<leader>l', '<Plug>(leap-forward-to)')
 
 -- from leap's default config
 require('leap').setup {

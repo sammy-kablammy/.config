@@ -1,6 +1,12 @@
 # GIT QUICK REFERENCE
 
 explanations of common git commands because they are named terribly
+i'm considering restructuring this file to be based on use case instead of command
+
+# git rm
+don't use this command
+it just seems to cause problems.
+use 'git add' and 'git restore' instead
 
 # git checkout
 don't use this command
@@ -8,29 +14,65 @@ it was split into 'switch' and 'restore'
 
 ## git branch
 list branches that currently exist
-git branch
+* git branch
 
 create a branch with the given name:
-git branch <name>
-alternatively,
-git branch -c <name>
+* git branch <name>
 
 delete a branch that already exists
-git branch -d <name>
+* git branch -d <name>
 
 # git switch
 switch to a branch that already exists
-git switch <name>
+* git switch <name>
+
+create a branch and then switch to it (this is just so you don't have to git branch beforehand)
+* git switch -c <name>
+* git switch --create <name>
 
 ## git restore
 revert files to the previous commit
-git restore <file1> <file2> <file3>
+* git restore <file1> <file2> <file3>
 
 unstage changes for files
-git restore --staged <file1> <file2> <file3>
+* git restore --staged <file1> <file2> <file3>
 
-revert file to a specific commit (you'll need the desired commit's hash)
-git restore <hash> <file>
+revert file to a specific commit
+* git restore <file> -s <commit hash>
 
-revert file to specific branch
-git restore <branch name> <file>
+# git add
+stage all changes in the given file
+* git add <file>
+
+stage some changes in the given file (it will open the file and prompt you for each change)
+note: when in the -p menu, type '?' to see what all the options mean
+* git add --interactive <file>
+* git add -i <file>
+while in the interactive mode, here are some of the less obvious options:
+* status: shows a message similar to git status. you can see staged and unstaged changes.
+* update: effectively "git adds" a file. just adds all the changes. (citation needed)
+* patch: enter the patching screen. remember to use 's' once in there.
+
+rather than entering the full interactive mode, you can jump straight into patching:
+* git add -p <file>
+* git add --patch <file>
+when patching, remember to use the 's' option to split hunks into smaller changes.
+
+note: 'git commit --interactive' also exists.
+
+# git stash
+to drop everything you're currently working on and go back to the previous commit,
+you'll want to use git stash.
+
+it seems that 'git stash' is equivalent to 'git stash push' in general
+
+when you want to get stashed changes back...
+* git stash pop
+
+see stashes available
+* git stash list
+
+sometimes, stashed changes just kinda linger. i think it's when merge conflicts occur.
+anyways, to remove stashed changes from the stash list, use
+* git stash drop <index>
+where <index> is the number of the item in the stash list you want to remove
