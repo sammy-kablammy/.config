@@ -65,6 +65,8 @@ While in nvim-tree, do g?
 
 # LSP help
 To see lsp-zero's keybindings, i've mapped <leader>lsp to open that help screen :)
+To scroll up/down in the autocomplete menu, use ctrl+n and ctrl+p as per usual.
+To scroll up/down for a particular autocomplete option, use ctrl+u and ctrl+d.
 
 The commands :LspStop and :LspStart do exactly what you think
 
