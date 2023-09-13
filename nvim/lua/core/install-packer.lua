@@ -2,7 +2,7 @@
 -- The reasoning behind using this method of installing packer is so that
 -- packer will automatically install itself whenever you have this file
 -- as part of your nvim configuration, even on a brand new machine.
---
+
 -- Whenever you make changes to the installed packages, don't forget to :PackerSync
 -- You don't configure plugins here. Each plugin gets its own config file.
 
@@ -21,7 +21,7 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
-    -- My plugins here
+    -- non-packer plugins go down here
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'nvim-lualine/lualine.nvim'
     use 'nvim-tree/nvim-tree.lua'
@@ -32,6 +32,23 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+    use 'lewis6991/gitsigns.nvim'
+    use 'ThePrimeagen/vim-be-good'
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end
+    }
+    use "ggandor/leap.nvim"
+    use 'folke/todo-comments.nvim'
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -47,24 +64,6 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },     -- Required
         }
     }
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
-    use 'lewis6991/gitsigns.nvim'
-    use 'ThePrimeagen/vim-be-good'
-    -- Lua
-    use {
-        "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end
-    }
-    use "ggandor/leap.nvim"
-    use 'folke/todo-comments.nvim'
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

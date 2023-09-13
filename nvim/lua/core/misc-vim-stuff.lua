@@ -33,6 +33,7 @@ vim.opt.colorcolumn = "100"
 vim.opt.hlsearch = false
 
 -- If a search query includes caps then it's case-sensitive, else it's case-insensitive.
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- faster autosave for swapfiles
