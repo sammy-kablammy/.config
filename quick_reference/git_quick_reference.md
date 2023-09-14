@@ -12,6 +12,14 @@ use 'git add' and 'git restore' instead
 don't use this command
 it was split into 'switch' and 'restore'
 
+actually maybe do use. you can do
+* git checkout <commit hash>
+to look at a previous commit.
+think "hey check this out" instead of "checking out of a store"
+
+to move the current branch to some other commit, use
+* git checkout --hard <commit hash>
+
 ## git branch
 list branches that currently exist
 * git branch
