@@ -20,9 +20,12 @@ vim.keymap.set('n', '<leader>hg', '<cmd>vsplit ~/.config/quick_reference/git_qui
 
 -- Buffer stuff
 vim.keymap.set('n', '<leader><tab>', '<cmd>bn<cr>')
-vim.keymap.set('n', '<leader>bq', '<cmd>bd<cr>')
 vim.keymap.set('n', '<leader>bn', '<cmd>bn<cr>')
 vim.keymap.set('n', '<leader>bp', '<cmd>bp<cr>')
+vim.keymap.set('n', '<leader>bq', '<cmd>bd<cr>')
+vim.keymap.set('n', '<leader>bQ', '<cmd>bd!<cr>')
+vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>')
+vim.keymap.set('n', '<leader>bD', '<cmd>bd!<cr>')
 
 -- Save file remaps
 -- vim.keymap.set('n', 'ZW', '<cmd>:w<cr>')
