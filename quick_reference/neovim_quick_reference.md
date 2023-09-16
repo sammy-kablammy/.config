@@ -4,7 +4,7 @@
 
 # Install neovim
 The apt version of neovim is super out of date. Use the appimage instead.
-```bash
+```
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 mv nvim.appimage nvim
 chmod u+x nvim
@@ -86,6 +86,8 @@ use <leader>s to search for a character.
 then you can use <space> to jump to the next group, or <tab> for previous group
 
 # Extra notes
+To see the previous output of commands, use :messages
+
 In order for nvim-tree to display the cute little icons, you'll need a Nerd Font. See bash quick reference.
 
 Nvim-tree also uses ctrl+v to do vertical split, but this doesn't work on windows sometimes.

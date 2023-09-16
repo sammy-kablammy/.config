@@ -3,6 +3,12 @@
 explanations of common git commands because they are named terribly
 i'm considering restructuring this file to be based on use case instead of command
 
+# misc tips
+see a more compact git log:
+* git log --oneline
+see more fun stuff
+* git log --all --graph --decorate --oneline
+
 # git rm
 don't use this command
 it just seems to cause problems.
