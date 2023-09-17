@@ -23,3 +23,6 @@ gh toggles hidden files
 % creates a file
 d creates a directory
 D deletes a file or empty directory
+
+# lol you can rot13 a line
+g?g? or g??

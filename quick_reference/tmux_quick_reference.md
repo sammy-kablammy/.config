@@ -18,3 +18,9 @@ prefix }
 
 Note: an example tmux config file is found at /usr/share/doc/tmux/
 (that sample config has a fix for colors not appearing whilst in tmux)
+
+## Copy mode
+Type prefix + [ to enter copy mode. It helps if you have vim nagivation enabled.
+Start selecting some text with the spacebar. Complete selection with enter.
+
+To paste copied text, use prefix + ]
