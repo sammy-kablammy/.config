@@ -17,7 +17,10 @@ vim.opt.mouse = ""
 vim.opt.wrap = false
 -- break up text onto the next line after 100 characters
 -- this applies to comments if 'c' is a formatoption; it applies to normal text if 't' is set
-vim.opt.textwidth = 100
+vim.opt.textwidth = 80
+
+-- big column at 100 chars
+vim.opt.colorcolumn = "80"
 
 -- see :h fo-table for information about this stuff
 -- basically, you want 'r' enabled so that comments are continued in insert mode
@@ -32,9 +35,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
         end
     end
 })
-
--- big column at 100 chars
-vim.opt.colorcolumn = "100"
 
 -- stop highlighting the darn searches all the time!!!!
 vim.opt.hlsearch = false
