@@ -29,14 +29,26 @@ require("lazy").setup({
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
-        'VonHeikemen/lsp-zero.nvim',
-        dependencies = {
-            "neovim/nvim-lspconfig",
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
+        {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+
+        --- Uncomment these if you want to manage LSP servers from neovim
+        {'williamboman/mason.nvim'},
+        {'williamboman/mason-lspconfig.nvim'},
+
+        -- LSP Support
+        {
+            'neovim/nvim-lspconfig',
+            dependencies = {
+                {'hrsh7th/cmp-nvim-lsp'},
+            },
+        },
+
+        -- Autocompletion
+        {
             'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-nvim-lsp',
-            'L3MON4D3/LuaSnip',
+            dependencies = {
+                {'L3MON4D3/LuaSnip'},
+            }
         }
     },
     {

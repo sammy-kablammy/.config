@@ -1,9 +1,9 @@
 -- this file contains all my keymaps
 
-vim.g.mapleader = ' '
+-- [mapleader needs to be set in init.lua, right before lazy]
 
 -- quick :source command to reload stuff quickly while configuring
--- vim.keymap.set('n', '<leader>s', ':source<cr>')
+vim.keymap.set('n', '<leader>s', '<cmd>source<cr>')
 
 -- easier navigation between windows
 vim.keymap.set('n', '<c-h>', '<c-w>h')
@@ -30,9 +30,5 @@ vim.keymap.set('n', '<leader>bD', '<cmd>bd!<cr>')
 -- Save file remaps
 -- vim.keymap.set('n', 'ZW', '<cmd>:w<cr>')
 vim.keymap.set('n', '<leader>w', '<cmd>:w<cr>')
-
--- move lines up and down, from theprimeagen
--- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
--- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- TODO consider finding a use for alt+hjkl

@@ -1,5 +1,8 @@
--- typing <c-n> will find the current working directory and open it in nvim tree
-vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')
+-- typing <c-n> will find the current working directory and open it in nvim-tree
+vim.keymap.set('n', '<c-n>', '<cmd>NvimTreeFindFileToggle<cr>')
+
+-- easily close nvim-tree
+vim.keymap.set('n', '<c-b>', '<cmd>NvimTreeClose<cr>')
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
