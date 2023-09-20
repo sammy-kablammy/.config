@@ -12,7 +12,9 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'jdtls',
+    -- 'lua-language-server'
+    -- 'jdtls',
+    -- 'clangd',
 })
 
 -- Fix Undefined global 'vim'

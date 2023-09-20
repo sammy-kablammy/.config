@@ -24,18 +24,16 @@ It also complains about a C compiler, but I just disable nvim-treesitter on wind
 # File structure explained
 ~/.config/nvim
 ├── init.lua
-├── lua
-│   ├── all-my-plugin-configs
-│   │   ├── init.lua
-│   │   ├── myplugin1.lua
-│   │   ├── myplugin2.lua
-│   │   ├── myplugin3.lua
-│   └── core
-│       ├── install-packer.lua
-│       ├── keymaps.lua
-│       └── misc-vim-stuff.lua
-└── plugin
-    └── packer_compiled.lua
+├── lazy-lock.json
+└── lua
+    ├── core
+    │   ├── keymaps.lua
+    │   └── misc-vim-stuff.lua
+    └── plugin-configs
+        ├── init.lua
+        ├── myplugin1.lua
+        ├── myplugin2.lua
+        └── myplugin3.lua
 
 The main init.lua file is the first place neovim will look for configuration stuff.
 From there, we have the 'core' and 'all-my-plugin-configs' directories.
@@ -51,12 +49,11 @@ directory. Forget about where your current lua file is located.
 ---
 
 # How to install new plugins
-- Go to wherever packer is installed and find where all the other plugins are.
+- Go to wherever lazy is installed and find where all the other plugins are.
 With the plugin's github repo name in mind, add a line that looks something like this:
 ```lua
 use 'plugin_repo/plugin_name.nvim'
 ```
-- To actually install the thing, run :source and then :PackerSync
 - Then, you'll want to add a config file for that plugin.
 - Remember to require the new plugin's config file from the mini init.lua.
 
@@ -103,3 +100,8 @@ you'll need to install the ripgrep package. this is on your machine, not in nvim
 I've added <leader>td to open the TODOs list
 
 Note: to do case-insensitive search temporarily, type your search and add a '\c' to it.
+
+Note: plugins are stored in ~/.local/share/nvim
+
+When searching with %s, you can add a /c flag to the end to enable
+"confirmation" mode, meaning it will confirm each replace
