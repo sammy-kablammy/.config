@@ -1,3 +1,5 @@
 nvim/plugin
 *.swp
 *.swo
+gh/
+neofetch/

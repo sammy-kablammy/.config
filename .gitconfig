@@ -1,0 +1,21 @@
+; You'll need to link to this file from ~/.gitconfig by adding
+; [include]
+;   path = ~/.config/.gitconfig
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = samjcoop13@gmail.com
+	name = sammy-kablammy
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[alias]
+    logpretty = "log --all --graph --decorate --oneline"
+    logg = "log --all --graph --decorate --oneline"
+    s = "status"
+    ss = "status --short"
