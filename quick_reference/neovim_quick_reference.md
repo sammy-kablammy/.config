@@ -78,6 +78,10 @@ To format, use F3
 use gcc to toggle comments on the current line
 or, if you'd rather select some lines in visual line mode, use gc
 
+# Folds (really just a vim note)
+zr to open all folds
+zm to close all folds
+
 # Extra notes
 To see the previous output of commands, use :messages
 

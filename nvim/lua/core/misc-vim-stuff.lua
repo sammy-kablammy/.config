@@ -22,6 +22,10 @@ vim.opt.textwidth = 80
 -- big column at 100 chars
 vim.opt.colorcolumn = "80"
 
+-- hide the command line since lualine is cooler
+-- vim.opt.cmdheight = 0
+vim.opt.showmode = false
+
 -- see :h fo-table for information about this stuff
 -- basically, you want 'r' enabled so that comments are continued in insert mode
 -- but you want 'o' disabled so that comments do not continue when using the 'o' motion

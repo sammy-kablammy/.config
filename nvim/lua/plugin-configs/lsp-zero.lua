@@ -27,8 +27,8 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     -- `Enter` key to confirm completion
     -- ['<CR>'] = cmp.mapping.confirm({select = false}),
-
     ['<Tab>'] = cmp.mapping.confirm({select = true}),
+    ['<C-y>'] = cmp.mapping.confirm({select = true}),
 
     -- Ctrl+Space to trigger completion menu
     -- THIS CONFLICTS WITH TMUX :(

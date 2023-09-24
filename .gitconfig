@@ -9,7 +9,7 @@
 	email = samjcoop13@gmail.com
 	name = sammy-kablammy
 [core]
-	editor = vim
+	editor = nvim
 [init]
 	defaultBranch = main
 [pull]

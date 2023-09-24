@@ -2,9 +2,6 @@
 
 -- [mapleader needs to be set in init.lua, right before lazy]
 
--- quick :source command to reload stuff quickly while configuring
-vim.keymap.set('n', '<leader>s', '<cmd>source<cr>')
-
 -- easier navigation between windows
 vim.keymap.set('n', '<c-h>', '<c-w>h')
 vim.keymap.set('n', '<c-j>', '<c-w>j')
@@ -19,6 +16,8 @@ vim.keymap.set('n', '<leader>ht', '<cmd>vsplit ~/.config/quick_reference/tmux_qu
 vim.keymap.set('n', '<leader>hg', '<cmd>vsplit ~/.config/quick_reference/git_quick_reference.md<cr>')
 
 -- Buffer stuff
+-- :( can't use tab because it thinks it's ctrl+i
+-- vim.keymap.set('n', '<tab>', '<cmd>bn<cr>')
 vim.keymap.set('n', '<leader><tab>', '<cmd>bn<cr>')
 vim.keymap.set('n', '<leader>bn', '<cmd>bn<cr>')
 vim.keymap.set('n', '<leader>bp', '<cmd>bp<cr>')

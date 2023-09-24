@@ -90,3 +90,7 @@ sometimes, stashed changes just kinda linger. i think it's when merge conflicts 
 anyways, to remove stashed changes from the stash list, use
 * git stash drop <index>
 where <index> is the number of the item in the stash list you want to remove
+
+# git merge
+to merge the branch "newfeature" into "main," checkout main and do this:
+* git merge newfeature
