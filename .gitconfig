@@ -3,7 +3,6 @@
 ;   path = ~/.config/.gitconfig
 
 [credential "https://github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
 	email = samjcoop13@gmail.com
@@ -14,8 +13,12 @@
 	defaultBranch = main
 [pull]
 	rebase = false
+[diff]
+    tool = nvimdiff
 [alias]
     logpretty = "log --all --graph --decorate --oneline"
     logg = "log --all --graph --decorate --oneline"
+    l = "log --all --graph --decorate --oneline"
     s = "status"
     ss = "status --short"
+    dt = "difftool"
