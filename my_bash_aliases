@@ -12,10 +12,6 @@ alias 'python'='python3'
 alias 'py'='python3'
 alias 'peep'='vim -R' # lol
 
-# if nvim is installed, "vim" should be an alias for "nvim"
-# (the "2>&1" stuff just combines stdout and stderr into a single stream)
-# if command -v nvim > /dev/null 2>&1; then
-# alias 'vim'='nvim'
-# else
-# alias 'vim'='vim'
-# fi
+# use these lines to change manpage reader. (but nvim is much slower than less)
+# export MANPAGER='nvim +Man!'
+# export MANWIDTH=999

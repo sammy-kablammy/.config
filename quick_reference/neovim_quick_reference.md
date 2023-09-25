@@ -82,6 +82,11 @@ or, if you'd rather select some lines in visual line mode, use gc
 zr to open all folds
 zm to close all folds
 
+# Reload a file that was edited elsewhere
+Working on a file in nvim and vscode simultaneously?
+Neovim won't automatically load the new changes.
+Use `:edit` or just `:e` to get the latest version of the file.
+
 # Extra notes
 To see the previous output of commands, use :messages
 

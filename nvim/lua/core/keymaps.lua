@@ -23,6 +23,7 @@ vim.keymap.set('n', '<leader>hg', '<cmd>vsplit ~/.config/quick_reference/git_qui
 -- :( can't use tab because it thinks it's ctrl+i
 -- vim.keymap.set('n', '<tab>', '<cmd>bn<cr>')
 vim.keymap.set('n', '<leader><tab>', '<cmd>bn<cr>')
+vim.keymap.set('n', '<leader>bb', '<cmd>buffers<cr>')
 vim.keymap.set('n', '<leader>bn', '<cmd>bn<cr>')
 vim.keymap.set('n', '<leader>bp', '<cmd>bp<cr>')
 vim.keymap.set('n', '<leader>bq', '<cmd>bd<cr>')
@@ -30,8 +31,8 @@ vim.keymap.set('n', '<leader>bQ', '<cmd>bd!<cr>')
 vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>')
 vim.keymap.set('n', '<leader>bD', '<cmd>bd!<cr>')
 
--- Save file remaps
--- vim.keymap.set('n', 'ZW', '<cmd>:w<cr>')
+-- more remaps
 vim.keymap.set('n', '<leader>w', '<cmd>:w<cr>')
+vim.keymap.set('n', '<leader>e', '<cmd>:edit<cr>')
 
 -- TODO consider finding a use for alt+hjkl
