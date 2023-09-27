@@ -19,6 +19,10 @@ prefix }
 Note: an example tmux config file is found at /usr/share/doc/tmux/
 (that sample config has a fix for colors not appearing whilst in tmux)
 
+## ZOOM!
+prefix z
+(and do the same thing to disable zoom)
+
 ## Copy mode
 Type prefix + [ to enter copy mode. It helps if you have vim nagivation enabled.
 Start selecting some text with the spacebar. Complete selection with enter.
