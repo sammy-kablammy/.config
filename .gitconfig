@@ -24,3 +24,6 @@
     s = "status"
     ss = "status --short"
     dt = "difftool"
+    f = "fetch"
+    fs = "!f() { git fetch && git status; }; f"
+    fss = "!f() { git fetch && git status --short; }; f"
