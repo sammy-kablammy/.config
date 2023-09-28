@@ -10,6 +10,8 @@ see more fun stuff
 * git log --all --graph --decorate --oneline
 to view in vim, do this (don't forget the - at the end)
 * git log | vim -R -
+to see all the files currently being tracked by git
+* git ls-tree -r main --name-only
 
 # git rm
 don't use this command
