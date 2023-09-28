@@ -110,3 +110,9 @@ Note: plugins are stored in ~/.local/share/nvim
 
 When searching with %s, you can add a /c flag to the end to enable
 "confirmation" mode, meaning it will confirm each replace
+
+Problem with LSP:
+If you see an error count on the left side of lualine but do not see the little
+diagnostic messages throughout your code, try :e for just reopening the file on
+its own. wait for the LSP stuff to appear; don't try to open a new buffer in the
+middle of its loading
