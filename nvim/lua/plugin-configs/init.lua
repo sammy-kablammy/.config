@@ -1,5 +1,6 @@
 require("plugin-configs.nvim-tree")
 require("plugin-configs.telescope")
+require("plugin-configs.neodev")
 require("plugin-configs.lsp-zero")
 require("plugin-configs.whichkey")
 require("plugin-configs.catppuccin")

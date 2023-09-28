@@ -3,3 +3,4 @@ nvim/plugin
 *.swo
 gh/
 neofetch/
+nvim/lazy-lock.json
