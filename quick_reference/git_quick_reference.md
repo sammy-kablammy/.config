@@ -8,6 +8,8 @@ see a more compact git log:
 * git log --oneline
 see more fun stuff
 * git log --all --graph --decorate --oneline
+to view in vim, do this (don't forget the - at the end)
+* git log | vim -R -
 
 # git rm
 don't use this command

@@ -38,11 +38,9 @@ else
         },
         {
             { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
-
             --- Uncomment these if you want to manage LSP servers from neovim
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
-
             -- LSP Support
             {
                 'neovim/nvim-lspconfig',
@@ -50,7 +48,6 @@ else
                     { 'hrsh7th/cmp-nvim-lsp' },
                 },
             },
-
             -- Autocompletion
             {
                 'hrsh7th/nvim-cmp',
@@ -74,6 +71,7 @@ else
         'folke/todo-comments.nvim',
         'lewis6991/gitsigns.nvim',
         'ThePrimeagen/vim-be-good',
+        'simrat39/rust-tools.nvim',
     })
 
     -- ...and these are my config files :)

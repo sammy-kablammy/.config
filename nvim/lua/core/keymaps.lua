@@ -34,6 +34,13 @@ vim.keymap.set('n', '<leader>bQ', '<cmd>bd!<cr>')
 vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>')
 vim.keymap.set('n', '<leader>bD', '<cmd>bd!<cr>')
 
+-- tab stuff
+vim.keymap.set('n', '<leader>te', '<cmd>tabe<cr>')
+vim.keymap.set('n', '<leader>tq', '<cmd>tabclose<cr>')
+vim.keymap.set('n', '<leader>tn', '<cmd>tabnext<cr>')
+vim.keymap.set('n', '<leader>tp', '<cmd>tabprevious<cr>')
+vim.keymap.set('n', '<leader>tt', '<cmd>tabs<cr>')
+
 -- more remaps
 vim.keymap.set('n', '<leader>w', '<cmd>:w<cr>')
 vim.keymap.set('n', '<leader>e', '<cmd>:edit<cr>')

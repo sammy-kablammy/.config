@@ -31,8 +31,8 @@ cmp.setup({
     ['<C-y>'] = cmp.mapping.confirm({select = true}),
 
     -- Ctrl+Space to trigger completion menu
-    -- THIS CONFLICTS WITH TMUX :(
-    -- ['<C-Space>'] = cmp.mapping.complete(),
+    -- THIS CONFLICTS WITH TMUX :( USE <prefix>C-b to bypass
+    ['<C-Space>'] = cmp.mapping.complete(),
 
     -- Navigate between snippet placeholder
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
