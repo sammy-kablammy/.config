@@ -78,6 +78,17 @@ when patching, remember to use the 's' option to split hunks into smaller change
 
 note: 'git commit --interactive' also exists.
 
+# branches and stuff
+once you have created a new local branch and want to push it to a remote branch,
+do
+* git push origin new_feature
+if you want to set it so that future pushes don't need to specify the remote
+branch, you can do
+* git push -u origin my_feature
+from that point on, you can just 'git push' and it will remember.
+this is a per-branch setting, so your local 'main' branch will still push to the
+remote 'main' branch, for example
+
 # git stash
 to drop everything you're currently working on and go back to the previous commit,
 you'll want to use git stash.

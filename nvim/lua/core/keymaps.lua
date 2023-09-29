@@ -5,6 +5,9 @@
 -- remove "ctrl-a" because it's really annoying why would i ever want to use it why why why
 vim.keymap.set('i', '<c-a>', '')
 
+-- 'clear search'
+vim.keymap.set('n', '<leader>cs', '<cmd>noh<cr>')
+
 -- up/down should work how you expect even if a line is really long
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')

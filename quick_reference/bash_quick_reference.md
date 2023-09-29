@@ -12,6 +12,7 @@ ctrl + l acts like clear
 ctrl + j acts like enter
 ctrl + w acts like ctrl + backspace in normal text editors
 alt + leftarrow or alt + rightarrow act like ctrl + arrows in other text editors
+echo $? to see the error code of previous program
 
 # job control
 you already know about ctrl-c to stop a running program.
