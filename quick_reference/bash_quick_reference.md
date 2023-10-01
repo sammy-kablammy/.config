@@ -12,7 +12,11 @@ ctrl + l acts like clear
 ctrl + j acts like enter
 ctrl + w acts like ctrl + backspace in normal text editors
 alt + leftarrow or alt + rightarrow act like ctrl + arrows in other text editors
+!! retypes the previous command (very useful for `sudo !!`
+$# holds the number of command line args
 echo $? to see the error code of previous program
+echo $_ to see the most recently used command line argument
+echo $@ to see all the args
 
 # job control
 you already know about ctrl-c to stop a running program.
@@ -48,3 +52,37 @@ https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/ComicShannsMono
 i use fonts without ligatures (test ligatures here !=).
 
 for a ligature-positive font, use JetBrains Mono.
+
+# scripting quick reference
+start your scripts with `#!/bin/bash`
+
+when writing conditional expressions, you have one condition per [] block.
+you can combine these conditions with the standard && and || and ! operators.
+
+- Conditional expressions
+```bash
+# for numbers, use -ne, -eq, -ge, -lt, and so on
+# for strings, use = or !=
+if [ $# -eq 1 ]; then
+    echo "that's the correct number of command line arguments! hooray!"
+elif [ $# -ge 2 ]; then
+    echo "too many!"
+else
+    echo "expected command line argument"
+    exit 1
+fi
+```
+
+- Looping
+```bash
+for c_file in *.c; do
+    echo "This C file is called $c_file"
+done
+```
+
+- Variables
+```bash
+# creating variables is simpler than you think
+myvar = 10
+anothervar = "$1"
+```
