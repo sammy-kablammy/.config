@@ -17,6 +17,13 @@ $# holds the number of command line args
 echo $? to see the error code of previous program
 echo $_ to see the most recently used command line argument
 echo $@ to see all the args
+you know that > will output to file, but >> can append text to file
+
+# symlink
+to link from one location to another (particularly useful with WSL), use `ln`
+you'll probably want a symlink instead of a hard link.
+you can look up the difference.
+* ln -s /mnt/c/Users/my_windows_folder my_nickname
 
 # job control
 you already know about ctrl-c to stop a running program.
@@ -86,3 +93,5 @@ done
 myvar = 10
 anothervar = "$1"
 ```
+a note on variables: when assigning or reassigning variables, don't use `$`.
+think of the `$` as dereferencing the variable

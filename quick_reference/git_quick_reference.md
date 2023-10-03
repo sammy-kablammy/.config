@@ -48,6 +48,9 @@ create a branch and then switch to it (this is just so you don't have to git bra
 * git switch -c <name>
 * git switch --create <name>
 
+# git revert
+undo a commit. it'll stay in the history but its effects will be undone
+
 ## git restore
 revert files to the previous commit
 * git restore <file1> <file2> <file3>
@@ -77,6 +80,10 @@ rather than entering the full interactive mode, you can jump straight into patch
 when patching, remember to use the 's' option to split hunks into smaller changes.
 
 note: 'git commit --interactive' also exists.
+
+# git reset
+this command is basically like `git checkout` but instead of just peeping an
+older commit, it will move the current branch pointer with you.
 
 # branches and stuff
 once you have created a new local branch and want to push it to a remote branch,
@@ -109,3 +116,14 @@ where <index> is the number of the item in the stash list you want to remove
 # git merge
 to merge the branch "newfeature" into "main," checkout main and do this:
 * git merge newfeature
+when you merge, a .orig file may be created. this is just a backup in case
+something goes wrong while merging. delete this once you merge successfully.
+
+# rebase
+use `git rebase -i` to open interactive mode
+from there, you swap the lines around until you are satisfied with the order
+
+# bisect
+start with `git bisect start`
+then do `git bisect bad` on a bad commit or `git bisect good` on a good commit
+...hooray, you've found the bad change

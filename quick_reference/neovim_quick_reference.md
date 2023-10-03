@@ -125,3 +125,5 @@ If you see an error count on the left side of lualine but do not see the little
 diagnostic messages throughout your code, try :e for just reopening the file on
 its own. wait for the LSP stuff to appear; don't try to open a new buffer in the
 middle of its loading
+
+generally, if things don't work, just do :LspZeroSetupServers
