@@ -87,6 +87,11 @@ Working on a file in nvim and vscode simultaneously?
 Neovim won't automatically load the new changes.
 Use `:edit` or just `:e` to get the latest version of the file.
 
+# more vscode neovim trouble
+if installing neovim from source, you'll have to point the nvim extension to the
+nvim executable.
+also make sure the 'useWSL' flag is not synced.
+
 # Terminal emulator
 to open, use :term just like in normal vim.
 to exit, do <C-\> followed by <C-n>
