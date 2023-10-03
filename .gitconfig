@@ -15,6 +15,9 @@
 	rebase = false
 [diff]
     tool = nvimdiff
+    prompt = false
+[merge]
+    tool = nvimdiff
 [commit]
     verbose = true
 [alias]
@@ -27,3 +30,4 @@
     f = "fetch"
     fs = "!f() { git fetch && git status; }; f"
     fss = "!f() { git fetch && git status --short; }; f"
+    mt = "mergetool"
