@@ -1,10 +1,6 @@
 # BASH QUICK REFERENCE
  
-# bypass an alias
-prepend the command with a backslash
-
 # misc terminal stuff
-neofetch does the cool ascii art thing
 ctrl + a acts like home
 ctrl + e acts like end
 ctrl + h acts like backspace
@@ -12,12 +8,14 @@ ctrl + l acts like clear
 ctrl + j acts like enter
 ctrl + w acts like ctrl + backspace in normal text editors
 alt + leftarrow or alt + rightarrow act like ctrl + arrows in other text editors
-!! retypes the previous command (very useful for `sudo !!`
+!! retypes the previous command. very useful for `sudo !!` when you forget sudo.
 $# holds the number of command line args
 echo $? to see the error code of previous program
 echo $_ to see the most recently used command line argument
 echo $@ to see all the args
-you know that > will output to file, but >> can append text to file
+you know > will write to a file, but >> can append text to file
+neofetch does the cool ascii art thing
+to bypass an alias, prepend the command with a backslash
 
 # symlink
 to link from one location to another (particularly useful with WSL), use `ln`
@@ -26,9 +24,10 @@ you can look up the difference.
 * ln -s /mnt/c/Users/my_windows_folder my_nickname
 
 # job control
-you already know about ctrl-c to stop a running program.
-to test this kind of thing, you can use the "sleep" command, which takes a
+to test this kind of stuff, you can use the "sleep" command, which takes a
 number of seconds.
+
+you already know about ctrl-c to stop a running program.
 
 there are tons of signals that shell programs can receive.
 typing ctrl-c sends a SIGINT (a signal to interrupt), for example

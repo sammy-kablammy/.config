@@ -2,7 +2,7 @@
 
 ---
 
-# Install neovim
+# Install neovim (this is harder than it should be)
 The apt version of neovim is super out of date. Use the appimage instead.
 ```
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
@@ -36,12 +36,13 @@ It also complains about a C compiler, but I just disable nvim-treesitter on wind
         └── myplugin3.lua
 
 The main init.lua file is the first place neovim will look for configuration stuff.
-From there, we have the 'core' and 'all-my-plugin-configs' directories.
+From there, we have the 'core' and 'plugin-configs' directories.
 The 'core' directory has all the stock vim config stuff, as well as the plugin manager stuff.
-All my plugin configs are found exactly where you think they are.
+Plugins configs are exactly where you think they are.
 
-There is a mini init.lua file in 'all-my-plugin-configs' that grabs all the individual plugin
-configs. When installing new plugins, 
+There is a mini init.lua file in 'all-my-plugin-configs' that grabs all the
+individual plugin configs. When installing new plugins, make sure to add them
+to this mini init.lua.
 
 When requiring a lua file from another, always imagine yourself as starting from the 'lua'
 directory. Forget about where your current lua file is located.
@@ -57,8 +58,8 @@ use 'plugin_repo/plugin_name.nvim'
 - Then, you'll want to add a config file for that plugin.
 - Remember to require the new plugin's config file from the mini init.lua.
 
-# Nvim-tree help
-While in nvim-tree, do g?
+# Nvim-tree
+To see help, do `g?`
 
 # LSP help
 To see lsp-zero's keybindings, i've mapped <leader>lsp to open that help screen :)
@@ -71,14 +72,12 @@ If you're in a file an don't have LSP support, run :Mason and then you can find 
 If you'd rather have some choices based on the file contents, run :LspInstall for server options.
 
 To select some code from a pop-up, do ctrl+y
-To rename, use F2
-To format, use F3
 
 # Comment.nvim
-use gcc to toggle comments on the current line
+use `gcc` to toggle comments on the current line
 or, if you'd rather select some lines in visual line mode, use gc
 
-# Folds (really just a vim note)
+# Folds (applies to normal vim as well)
 zr to open all folds
 zm to close all folds
 
@@ -127,3 +126,7 @@ its own. wait for the LSP stuff to appear; don't try to open a new buffer in the
 middle of its loading
 
 generally, if things don't work, just do :LspZeroSetupServers
+
+dude. you can use :TOhtml to convert the entire current buffer into html with
+line numbers and everything. i don't know where to use this but that is super
+rad.

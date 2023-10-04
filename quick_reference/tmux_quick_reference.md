@@ -1,5 +1,8 @@
 # TMUX QUICK REFERENCE
 
+Note: an example tmux config file is found at /usr/share/doc/tmux/
+(that sample config has a fix for colors not appearing whilst in tmux)
+
 ## tmux help
 prefix ?
 
@@ -16,8 +19,9 @@ prefix !
 prefix {
 prefix }
 
-Note: an example tmux config file is found at /usr/share/doc/tmux/
-(that sample config has a fix for colors not appearing whilst in tmux)
+## swap windows
+prefix <
+prefix >
 
 ## ZOOM!
 prefix z

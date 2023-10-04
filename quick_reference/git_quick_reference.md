@@ -1,6 +1,6 @@
 # GIT QUICK REFERENCE
 
-explanations of common git commands because they are named terribly
+explanations of common git commands because they are named terribly.
 i'm considering restructuring this file to be based on use case instead of command
 
 # misc tips
