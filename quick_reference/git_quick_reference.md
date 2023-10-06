@@ -6,6 +6,8 @@ i'm considering restructuring this file to be based on use case instead of comma
 # misc tips
 see a more compact git log:
 * git log --oneline
+you can also give `git log` a filename and it will show changes relating to that
+file.
 see more fun stuff
 * git log --all --graph --decorate --oneline
 to view in vim, do this (don't forget the - at the end)
@@ -13,10 +15,16 @@ to view in vim, do this (don't forget the - at the end)
 to see all the files currently being tracked by git
 * git ls-tree -r main --name-only
 
+# HEAD
+HEAD is the name of the currently checked out commit.
+HEAD^ refers to the parent of HEAD. HEAD^^ is the grandparent, etc.
+HEAD~n is the nth parent of HEAD.
+
 # git rm
 don't use this command
 it just seems to cause problems.
 use 'git add' and 'git restore' instead
+(if you're looking to remove a file from git's tracking, then try rm --cached)
 
 # git checkout
 don't use this command
@@ -49,7 +57,8 @@ create a branch and then switch to it (this is just so you don't have to git bra
 * git switch --create <name>
 
 # git revert
-undo a commit. it'll stay in the history but its effects will be undone
+undo a commit. it'll stay in the history but its effects will be undone.
+basically, make a new commit that happens to precisely undo the previous one.
 
 ## git restore
 revert files to the previous commit
