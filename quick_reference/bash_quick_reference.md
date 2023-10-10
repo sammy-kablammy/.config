@@ -23,6 +23,10 @@ you'll probably want a symlink instead of a hard link.
 you can look up the difference.
 * ln -s /mnt/c/Users/my_windows_folder my_nickname
 
+# operate on a range of files
+example: create files 1 through 100:
+* touch file{1..100}
+
 # job control
 to test this kind of stuff, you can use the "sleep" command, which takes a
 number of seconds.
