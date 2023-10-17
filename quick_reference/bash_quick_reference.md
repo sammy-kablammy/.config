@@ -16,6 +16,7 @@ echo $@ to see all the args
 you know > will write to a file, but >> can append text to file
 neofetch does the cool ascii art thing
 to bypass an alias, prepend the command with a backslash
+to open a file as hex/binary, use `xxd myfile` or `xxd -b myfile`
 
 # symlink
 to link from one location to another (particularly useful with WSL), use `ln`
