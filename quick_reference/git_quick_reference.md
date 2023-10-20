@@ -14,6 +14,8 @@ to view in vim, do this (don't forget the - at the end)
 * git log | vim -R -
 to see all the files currently being tracked by git
 * git ls-tree -r main --name-only
+to fetch/rebase instead of the default fetch/merge, use
+* git pull --rebase
 
 # HEAD
 HEAD is the name of the currently checked out commit.
@@ -129,10 +131,33 @@ when you merge, a .orig file may be created. this is just a backup in case
 something goes wrong while merging. delete this once you merge successfully.
 
 # rebase
+(just use interactive mode
 use `git rebase -i` to open interactive mode
-from there, you swap the lines around until you are satisfied with the order
+from there, you swap the lines around until you are satisfied with the order)
+
+rebase the current commit onto feature2
+* git rebase feature2
+rebase feature5 onto feature2 (you don't have to have f5 currently checked out)
+* git rebase feature2 feature5
 
 # bisect
 start with `git bisect start`
 then do `git bisect bad` on a bad commit or `git bisect good` on a good commit
 ...hooray, you've found the bad change
+
+# Tags
+add a tag to the current commit
+* git tag importantFeature
+add a tag to a specific commit hash
+* git tag importantFeature <hash>
+
+# describe
+describe the HEAD
+* git describe
+describe a specific branch
+* git describe <branch_name>
+the output of git describe is formatted like `<tag>_<distance>_g<hash>`, where
+- <tag> is a previous tag
+- <distance> is the number of commits since that tag
+- <hash> is the commit hash of the current commit
+Example: `v1_2_g12345` is read as "v1 is 2 commits before the current commit of 12345"
