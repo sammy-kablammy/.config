@@ -99,3 +99,36 @@ anothervar = "$1"
 ```
 a note on variables: when assigning or reassigning variables, don't use `$`.
 think of the `$` as dereferencing the variable
+
+# awk
+(named after aho, weinberger, and kernighan)
+
+Print the first column of tabular data:
+* `cat table.txt | awk '{print $1}'`
+
+Printing $0 will just print the entire input as-is
+
+By default, columns are separated by spaces. This is called the field separator.
+You can change the field separator with the -F flag. For example: `-F ":"`
+
+Print all the users on your system:
+* `awk -F ":" '{print $1}' /etc/passwd`
+Also include the sixth column, separating the columns by a tab character
+* `awk -F ":" '{print $1 "\t" $6}' /etc/passwd`
+
+You can also search using regexes, just like grep.
+Search for all lines that begin with a '#'
+* `awk '/#/' myfile.txt`
+Search for any line containing "fun" or "file"
+* `awk '/fun|file/' myfile.txt`
+etc.
+
+# sed
+sed's method of file IO is strange. use a left chevron to indicate the input
+file, right for output (output file can be omitted).
+Replace all instances of HEAD with TAIL:
+* `sed 's/HEAD/TAIL/g' <table.txt`
+Pipe some text into sed:
+* `echo "howdy yall" | sed 's/y/EEE/'`
+Use the same file for input and output:
+* `sed -i '/s/hi/ho/g' myfile.txt`
