@@ -6,13 +6,14 @@
 # source /path/to/this/file
 
 alias 'cls'='clear'
+alias 'ls'='exa'
 alias 'll'='ls -lh'
 alias 'la'='ls -a'
+alias 'cp'='cp -i'
+alias 'peep'='nvim -R' # lol
 alias 'mkdir'='mkdir -p'
 alias 'python'='python3'
 alias 'py'='python3'
-alias 'peep'='vim -R' # lol
-alias 'ls'='exa'
 
 # make and then cd into directory
 mcd () {
