@@ -130,3 +130,7 @@ generally, if things don't work, just do :LspZeroSetupServers
 dude. you can use :TOhtml to convert the entire current buffer into html with
 line numbers and everything. i don't know where to use this but that is super
 rad.
+
+to change the filetype of the current buffer (useful for when you have a
+temporary vim instance open and don't want to save the file), use the `setf`
+command.

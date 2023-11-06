@@ -132,3 +132,6 @@ Pipe some text into sed:
 * `echo "howdy yall" | sed 's/y/EEE/'`
 Use the same file for input and output:
 * `sed -i '/s/hi/ho/g' myfile.txt`
+
+# gdb tips
+run with `--tui` to preview source code
