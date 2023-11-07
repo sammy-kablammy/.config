@@ -134,3 +134,6 @@ rad.
 to change the filetype of the current buffer (useful for when you have a
 temporary vim instance open and don't want to save the file), use the `setf`
 command.
+
+To fix "failed to create python3 virtual environment" in mason when trying to
+install certain cpp things, try apt installing "python3-venv"

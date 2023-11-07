@@ -135,3 +135,22 @@ Use the same file for input and output:
 
 # gdb tips
 run with `--tui` to preview source code
+you can also type `tui enable` from within the prompt
+...or do ctrl+x+a
+note that you need to scroll with ctrl+n and ctrl+p
+add a breakpoint with `b` or `break <line number>`
+see breakpoint numbers with `info break`
+enable/disable a breakpoint by their number, not line number.
+remove a breakpoint with `clear <line number>`
+run or restart program with `run`
+see stack (backtrace) with `bt`
+`c` - continue to next breakpoint
+`n` - step over to next line
+`s` - step into
+`p` - print value of variable (to see pointers, just print &myvar)
+`info locals` - see all local variables in scope
+`info args` - see all args to this function
+change the TUI layout with `layout asm` or `layout src`
+split view to see both asm and src with `layout split`
+to step by instructions instead of source, use `si` or `ni`
+to give arrow key focus to a particular window, do `focus cmd` or `focus src`

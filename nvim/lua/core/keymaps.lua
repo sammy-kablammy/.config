@@ -18,6 +18,10 @@ vim.keymap.set('n', '<c-j>', '<c-w>j')
 vim.keymap.set('n', '<c-k>', '<c-w>k')
 vim.keymap.set('n', '<c-l>', '<c-w>l')
 
+-- scroll up and down without getting disoriented
+vim.keymap.set('n', '<c-d>', '<c-d>zz')
+vim.keymap.set('n', '<c-u>', '<c-u>zz')
+
 -- easily open my help files
 vim.keymap.set('n', '<leader>hv', '<cmd>vsplit ~/.config/quick_reference/vim_quick_reference.md<cr>')
 vim.keymap.set('n', '<leader>hn', '<cmd>vsplit ~/.config/quick_reference/neovim_quick_reference.md<cr>')
