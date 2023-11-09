@@ -52,4 +52,13 @@ vim.keymap.set('n', '<leader>tt', '<cmd>tabs<cr>')
 vim.keymap.set('n', '<leader>w', '<cmd>:w<cr>')
 vim.keymap.set('n', '<leader>e', '<cmd>:edit<cr>')
 
+-- quickfix list
+vim.keymap.set('n', '<leader>co', '<cmd>:copen<cr>')
+vim.keymap.set('n', '<leader>cq', '<cmd>:cclose<cr>')
+vim.keymap.set('n', '<leader>cn', '<cmd>:cn<cr>')
+vim.keymap.set('n', '<leader>cp', '<cmd>:cp<cr>')
+vim.keymap.set('n', '<leader>cf', '<cmd>:cfirst<cr>')
+vim.keymap.set('n', '<leader>cl', '<cmd>:clast<cr>')
+
+-- TODO disable :cq and other annoying quit commands
 -- TODO consider finding a use for alt+hjkl

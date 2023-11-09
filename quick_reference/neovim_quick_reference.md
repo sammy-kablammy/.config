@@ -1,4 +1,5 @@
 # NEOVIM QUICK REFERENCE
+Quickly navigate this file by matching regex /^\#/ with the vim quickfix list
 
 ---
 
@@ -95,6 +96,26 @@ also make sure the 'useWSL' flag is not synced.
 to open, use :term just like in normal vim.
 to exit, do <C-\> followed by <C-n>
 
+# the quickfix list
+Populate the quickfix list using something like :vimgrep and then you can jump
+around to all the things that need quick fixing
+
+Find all markdown headers in the current buffer (%)
+- :vimgrep /^\#/ %
+Open quickfix list
+- :cope
+Go to next markdown header
+- :cn
+
+You can vimgrep with multiple files
+Find all instances of 'foo' in all python and cpp files in the cwd:
+
+- :vimgrep /foo/ *.py *.cpp
+
+There is also a window-local version of the quickfix list (the "location list").
+It's used in the same way as the quickfix list but all the commands use 'l'
+instead of 'c' at the beginning.
+
 # Extra notes
 To see the previous output of commands, use :messages
 
@@ -137,3 +158,8 @@ command.
 
 To fix "failed to create python3 virtual environment" in mason when trying to
 install certain cpp things, try apt installing "python3-venv"
+
+EXPRESSION REGISTER:
+when in INSERT or COMMAND mode, you can use <C-r> to paste the contents of a
+register. this is useful for copying some stuff, then pasting it into the =
+command, which will output the numeric result
