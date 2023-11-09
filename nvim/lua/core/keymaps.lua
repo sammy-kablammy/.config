@@ -2,6 +2,8 @@
 
 -- [mapleader needs to be set in init.lua, right before lazy]
 
+-- if some keys aren't working, see :h :map-special-keys
+
 -- remove "ctrl-a" because it's really annoying why would i ever want to use it why why why
 vim.keymap.set('i', '<c-a>', '')
 
@@ -55,10 +57,22 @@ vim.keymap.set('n', '<leader>e', '<cmd>:edit<cr>')
 -- quickfix list
 vim.keymap.set('n', '<leader>co', '<cmd>:copen<cr>')
 vim.keymap.set('n', '<leader>cq', '<cmd>:cclose<cr>')
-vim.keymap.set('n', '<leader>cn', '<cmd>:cn<cr>')
-vim.keymap.set('n', '<leader>cp', '<cmd>:cp<cr>')
 vim.keymap.set('n', '<leader>cf', '<cmd>:cfirst<cr>')
 vim.keymap.set('n', '<leader>cl', '<cmd>:clast<cr>')
+vim.keymap.set('n', '<leader>cn', '<cmd>:cn<cr>')
+vim.keymap.set('n', '<leader>cp', '<cmd>:cp<cr>')
+vim.keymap.set('n', ']t', '<cmd>:cn<cr>')
+vim.keymap.set('n', '[t', '<cmd>:cp<cr>')
+
+-- add argument to function
+vim.keymap.set('n', '<leader>a', '$F)i, ')
+
+-- put markdown headings into the quickfix list for easy navigation
+vim.keymap.set('n', 'md', '<cmd>vimgrep /^\\#/ %<cr><cmd>copen<cr>')
+
+-- navigate between git merge conflict markers
+vim.keymap.set('n', '[g', '?<<<<<<<<cr>')
+vim.keymap.set('n', ']g', '/<<<<<<<<cr>')
 
 -- TODO disable :cq and other annoying quit commands
 -- TODO consider finding a use for alt+hjkl
