@@ -1,4 +1,5 @@
 # VIM QUICK REFERENCE
+TODO combine this file with the neovim quick reference file
 
 (this file contains things that i'm currently learning. once they become muscle memory,
 they can be removed from this file)
@@ -26,3 +27,4 @@ D deletes a file or empty directory
 
 # lol you can rot13 a line 💀💀💀
 g?g? or g??
+also you can do ga to see ascii values of characters

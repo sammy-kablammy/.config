@@ -10,9 +10,11 @@ vim.keymap.set('i', '<c-a>', '')
 -- 'clear search'
 vim.keymap.set('n', '<leader>cs', '<cmd>noh<cr>')
 
--- up/down should work how you expect even if a line is really long
+-- movement should work how you expect even if a line is really long
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('n', '0', 'g0')
+vim.keymap.set('n', '$', 'g$')
 
 -- easier navigation between windows
 vim.keymap.set('n', '<c-h>', '<c-w>h')
@@ -63,6 +65,15 @@ vim.keymap.set('n', '<leader>cn', '<cmd>:cn<cr>')
 vim.keymap.set('n', '<leader>cp', '<cmd>:cp<cr>')
 vim.keymap.set('n', ']t', '<cmd>:cn<cr>')
 vim.keymap.set('n', '[t', '<cmd>:cp<cr>')
+
+-- "change inside ___" motions but reversed
+vim.keymap.set('n', 'cr"', '?"<cr><cmd>:nohlsearch<cr>ci"')
+vim.keymap.set('n', "cr'", "?'<cr><cmd>:nohlsearch<cr>ci'")
+vim.keymap.set('n', 'cr`', '?`<cr><cmd>:nohlsearch<cr>ci`')
+vim.keymap.set('n', 'cr(', '?(<cr><cmd>:nohlsearch<cr>ci(')
+vim.keymap.set('n', 'cr[', '?[<cr><cmd>:nohlsearch<cr>ci[')
+vim.keymap.set('n', 'cr{', '?{<cr><cmd>:nohlsearch<cr>ci{')
+vim.keymap.set('n', 'cr<', '?<<cr><cmd>:nohlsearch<cr>ci<')
 
 -- add argument to function
 vim.keymap.set('n', '<leader>a', '$F)i, ')

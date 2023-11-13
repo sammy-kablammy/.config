@@ -1,6 +1,9 @@
 # NEOVIM QUICK REFERENCE
 Quickly navigate this file by matching regex /^\#/ with the vim quickfix list
 
+# REMINDERS !!!!!!
+use the r motion more
+
 ---
 
 # Install neovim (this is harder than it should be)
@@ -49,6 +52,14 @@ When requiring a lua file from another, always imagine yourself as starting from
 directory. Forget about where your current lua file is located.
 
 ---
+
+# how to run vimscript within init.lua
+vim.cmd('echo "foo"')
+or
+vim.cmd([[
+    echo "foo"
+    echo "bar"
+]])
 
 # How to install new plugins
 - Go to wherever lazy is installed and find where all the other plugins are.
@@ -163,3 +174,7 @@ EXPRESSION REGISTER:
 when in INSERT or COMMAND mode, you can use <C-r> to paste the contents of a
 register. this is useful for copying some stuff, then pasting it into the =
 command, which will output the numeric result
+
+if you select something but back out of visual mode, you can reselect it using `gv`
+
+similar thing with insert mode and `gi`

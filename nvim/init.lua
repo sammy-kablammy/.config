@@ -78,4 +78,5 @@ else
     require("plugin-configs")
     require("core.keymaps")
     require("core.misc-vim-stuff")
+    require("core.abbreviations")
 end
