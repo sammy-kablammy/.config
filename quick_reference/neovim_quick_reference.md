@@ -1,4 +1,4 @@
-# NEOVIM QUICK REFERENCE
+ NEOVIM QUICK REFERENCE
 Quickly navigate this file by matching regex /^\#/ with the vim quickfix list
 
 # REMINDERS !!!!!!
@@ -174,6 +174,9 @@ EXPRESSION REGISTER:
 when in INSERT or COMMAND mode, you can use <C-r> to paste the contents of a
 register. this is useful for copying some stuff, then pasting it into the =
 command, which will output the numeric result
+
+in fact, this is just useful everywhere.
+use ctrl+r in command mode to access registers
 
 if you select something but back out of visual mode, you can reselect it using `gv`
 
