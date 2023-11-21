@@ -1,0 +1,9 @@
+this is a TEXT file
+
+TEXTy TEXTy TEXTy TEXT
+
+do some magic with the awk command
+
+# imagine this is a comment
+# this could also be a comment
+# commenty fun time
