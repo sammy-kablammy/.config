@@ -113,6 +113,27 @@ changeMe = "howdy"
 -- Any extra arguments are simply ignored
 showTypeInfo("howdy howdy", "this string should be ignored")
 
+-- on lua styling, you might want to use snake_case for functions and PascalCase
+-- for methods as in C#
+
+-- note that loops include both end points
+function fizzbuzz(n)
+    for i = 1,n,1 do
+        if i % 15 == 0 then
+            print "fizzbuzz"
+        elseif i % 3 == 0 then
+            print "fizz"
+        elseif i % 5 == 0 then
+            print "buzz"
+        else
+            print(i)
+        end
+    end
+end
+
+print "fizzing..."
+fizzbuzz(15)
+
 -- conditions
 
 -- todo lookup patterns
