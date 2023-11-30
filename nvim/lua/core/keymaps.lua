@@ -4,8 +4,13 @@
 
 -- if some keys aren't working, see :h :map-special-keys
 
+vim.keymap.set('n', '<leader>li', '<cmd>LspInfo<cr>')
+
 -- remove "ctrl-a" because it's really annoying why would i ever want to use it why why why
 vim.keymap.set('i', '<c-a>', '')
+
+-- remove ctrl-f
+vim.keymap.set('n', '<c-f>', '')
 
 -- 'clear search'
 vim.keymap.set('n', '<leader>cs', '<cmd>noh<cr>')

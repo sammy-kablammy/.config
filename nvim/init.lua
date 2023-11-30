@@ -37,7 +37,7 @@ else
             dependencies = { 'nvim-lua/plenary.nvim' }
         },
         {
-            { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+            -- { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
             --- Uncomment these if you want to manage LSP servers from neovim
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },

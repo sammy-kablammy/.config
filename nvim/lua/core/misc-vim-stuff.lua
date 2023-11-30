@@ -44,7 +44,7 @@ vim.opt.smartcase = true
 -- faster autosave for swapfiles
 vim.opt.updatetime = 50
 
--- self-explanatory enough
+-- self-explanatory enough (or just use :h)
 vim.opt.number = true         -- needed for absolute number on current line
 vim.opt.relativenumber = true -- relative everywhere else
 vim.opt.cursorline = true
@@ -52,3 +52,4 @@ vim.opt.scrolloff = 5
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.mouse = ""
+vim.wo.signcolumn = "yes"

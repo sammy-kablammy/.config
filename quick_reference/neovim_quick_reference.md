@@ -85,6 +85,12 @@ If you'd rather have some choices based on the file contents, run :LspInstall fo
 
 To select some code from a pop-up, do ctrl+y
 
+# custom lsp setup
+after a while, i wanted to get away from lsp-zero and handle everything myself.
+
+to see the LSP configs that are provided by the lspconfig plugin, run
+:h lspconfig-all
+
 # Comment.nvim
 use `gcc` to toggle comments on the current line
 or, if you'd rather select some lines in visual line mode, use gc
@@ -181,3 +187,7 @@ use ctrl+r in command mode to access registers
 if you select something but back out of visual mode, you can reselect it using `gv`
 
 similar thing with insert mode and `gi`
+
+to match a newline, use \n
+to substitute with a newline, you need to use \r
+:s/endofline/\r/g

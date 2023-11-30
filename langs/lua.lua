@@ -6,6 +6,8 @@ LUA LANGUAGE REFERENCE
     https://www.lua.org/pil/contents.html
 - Lua docs:
     https://www.lua.org/docs.html
+- Reference Manual (really long page with everything)
+    https://www.lua.org/manual/5.4/manual.html#9
 - Also, neovim-specific lua information:
     https://neovim.io/doc/user/lua.html or do `:help lua`
 
