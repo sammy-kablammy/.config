@@ -19,6 +19,7 @@ lspconfig.lua_ls.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.marksman.setup {}
 lspconfig.jdtls.setup {}
+lspconfig.pyright.setup {}
 lspconfig.clangd.setup {}
 lspconfig.grammarly.setup {}
 lspconfig.rust_analyzer.setup {}
