@@ -1,4 +1,4 @@
- NEOVIM QUICK REFERENCE
+NEOVIM QUICK REFERENCE
 Quickly navigate this file by matching regex /^\#/ with the vim quickfix list
 
 # REMINDERS !!!!!!
