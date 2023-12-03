@@ -6,11 +6,9 @@
 
 vim.keymap.set('n', '<leader>li', '<cmd>LspInfo<cr>')
 
--- remove "ctrl-a" because it's really annoying why would i ever want to use it why why why
-vim.keymap.set('i', '<c-a>', '')
-
--- remove ctrl-f
+-- remove annoying mappings
 vim.keymap.set('n', '<c-f>', '')
+vim.keymap.set('i', '<c-a>', '')
 
 -- 'clear search'
 vim.keymap.set('n', '<leader>cs', '<cmd>noh<cr>')
@@ -90,6 +88,3 @@ vim.keymap.set('n', 'md', '<cmd>vimgrep /^\\#/ %<cr><cmd>copen<cr>')
 -- navigate between git merge conflict markers
 vim.keymap.set('n', '[g', '?<<<<<<<<cr>')
 vim.keymap.set('n', ']g', '/<<<<<<<<cr>')
-
--- TODO disable :cq and other annoying quit commands
--- TODO consider finding a use for alt+hjkl
