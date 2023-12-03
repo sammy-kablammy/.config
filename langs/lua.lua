@@ -82,7 +82,7 @@ function demonstrateScopes()
 end
 
 --[[
-# 2 - Types and Values (copied straight from the book)
+# Data types
 --]]
 
 showTypeInfo = function(arrrg)
@@ -94,6 +94,10 @@ end
 myname = "sam"
 myname2 = myname .. "kablammy"
 
+-- lua is dynamically typed
+changeMe = 10
+changeMe = "howdy"
+
 print "----- DATA TYPES -----"
 
 showTypeInfo(nil)           --> nil
@@ -104,11 +108,8 @@ showTypeInfo(10.4 * 3)      --> number
 showTypeInfo(print)         --> function
 showTypeInfo(type)          --> function
 
--- yes, this means that functions are first-class
-
--- lua is dynamically typed
-changeMe = 10
-changeMe = "howdy"
+-- when combining strings and numbers, it will try to coerce one to the other.
+-- however, you should use tonumber() and tostring()
 
 -- Function theory:
 -- Any arguments you forget to pass are received as nil.
@@ -120,7 +121,7 @@ showTypeInfo("howdy howdy", "this string should be ignored")
 
 -- note that loops include both end points
 function fizzbuzz(n)
-    for i = 1,n,1 do
+    for i=1,n,1 do
         if i % 15 == 0 then
             print "fizzbuzz"
         elseif i % 3 == 0 then
@@ -136,6 +137,24 @@ end
 print "fizzing..."
 fizzbuzz(15)
 
--- conditions
+-- note that 'false' and 'nil' are the only falsey values in lua. everything
+-- else is truthy.
 
--- todo lookup patterns
+--[[
+# Tables
+(the data structure of all time)
+--]]
+
+newtable = {}
+newtable["apple"] = 10
+print(newtable["apple"])
+
+-- 'othertable' now references the same underlying table as 'newtable'
+othertable = newtable
+-- 'newtable' now loses access to the table. 'othertable' is the sole owner.
+newtable = nil
+
+person = {
+    name = "sam"
+}
+print(person.name) -- hey, that looks like a struct or something
