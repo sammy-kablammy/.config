@@ -3,6 +3,7 @@ Quickly navigate this file by matching regex /^\#/ with the vim quickfix list
 
 # REMINDERS !!!!!!
 use the r motion more
+check out :options some time. it's pretty neato
 
 ---
 

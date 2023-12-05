@@ -27,7 +27,7 @@ require('lualine').setup {
                 path = 0
             }
         },
-        lualine_x = {},
+        lualine_x = { 'encoding', 'fileformat' },
         lualine_y = { 'filetype' },
         lualine_z = { 'location' }
     },
