@@ -16,9 +16,9 @@ vim.keymap.set('n', '<leader>cs', '<cmd>:set hls!<cr>')
 -- movement should work how you expect even if a line is really long
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
-vim.keymap.set('n', '0', 'g0')
-vim.keymap.set('n', '$', 'g$')
-vim.keymap.set('n', '^', 'g^')
+-- vim.keymap.set('n', '0', 'g0')
+-- vim.keymap.set('n', '$', 'g$')
+-- vim.keymap.set('n', '^', 'g^')
 
 -- easier navigation between windows
 vim.keymap.set('n', '<c-h>', '<c-w>h')

@@ -9,9 +9,10 @@ vim.opt.tabstop = 4
 -- 'shiftwidth' is the number of characters to shift when using << or >>
 vim.opt.shiftwidth = 4
 
--- disable line wrapping by default
--- note: this only makes vim display a line as multiple lines, it won't insert any linebreaks
--- vim.opt.wrap = false
+-- disable line wrapping (wrapping causes lines to be displayed on multiple
+-- lines, it won't insert any linebreaks)
+vim.opt.wrap = false
+vim.opt.breakindent = true
 -- break up text onto the next line after this many characters
 -- this applies to comments if 'c' is a formatoption; it applies to normal text if 't' is set
 vim.opt.textwidth = 80
@@ -38,12 +39,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 -- open help windows to the right instead of below
-vim.api.nvim_create_autocmd("BufWinEnter", {
-    pattern = { "*.txt" },
-    callback = function()
-        if vim.o.filetype == 'help' then vim.cmd.wincmd("L") end
-    end
+vim.api.nvim_create_user_command('H', function(opts)
+    local help_page_to_open = opts.args
+    vim.cmd('vertical help ' .. help_page_to_open)
+end, {
+    nargs = 1
 })
+
+-- preview substitutions
+vim.opt.inccommand = 'split'
 
 -- If a search query includes caps then it's case-sensitive, else it's case-insensitive.
 vim.opt.ignorecase = true
