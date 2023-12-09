@@ -2,8 +2,10 @@ NEOVIM QUICK REFERENCE
 Quickly navigate this file by matching regex /^\#/ with the vim quickfix list
 
 # REMINDERS !!!!!!
-use the r motion more
+use <c-^> (alternate file) more
+use the r and R motions more
 check out :options some time. it's pretty neato
+use :lua to easily test stuff
 
 ---
 
