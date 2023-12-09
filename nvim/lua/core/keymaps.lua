@@ -30,7 +30,10 @@ vim.keymap.set('n', '<c-l>', '<c-w>l')
 vim.keymap.set('n', '<c-d>', '<c-d>zz')
 vim.keymap.set('n', '<c-u>', '<c-u>zz')
 
--- easily open my help files
+-- easily open my help files & config
+vim.keymap.set('n', '<leader>ni', '<cmd>vsplit ~/.config/nvim/init.lua<cr>')
+vim.keymap.set('n', '<leader>nk', '<cmd>vsplit ~/.config/nvim/lua/core/keymaps.lua<cr>')
+vim.keymap.set('n', '<leader>nm', '<cmd>vsplit ~/.config/nvim/lua/core/misc-vim-stuff.lua<cr>')
 vim.keymap.set('n', '<leader>hv', '<cmd>vsplit ~/.config/quick_reference/vim_quick_reference.md<cr>')
 vim.keymap.set('n', '<leader>hn', '<cmd>vsplit ~/.config/quick_reference/neovim_quick_reference.md<cr>')
 vim.keymap.set('n', '<leader>hb', '<cmd>vsplit ~/.config/quick_reference/bash_quick_reference.md<cr>')

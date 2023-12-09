@@ -72,6 +72,10 @@ else
         'lewis6991/gitsigns.nvim',
         'ThePrimeagen/vim-be-good',
         'simrat39/rust-tools.nvim',
+
+        -- my custom plugins
+        'sammy-kablammy/nvim_plugin_template',
+
     })
 
     -- ...and these are my config files :)

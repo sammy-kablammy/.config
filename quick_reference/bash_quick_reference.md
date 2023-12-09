@@ -154,3 +154,8 @@ change the TUI layout with `layout asm` or `layout src`
 split view to see both asm and src with `layout split`
 to step by instructions instead of source, use `si` or `ni`
 to give arrow key focus to a particular window, do `focus cmd` or `focus src`
+
+also (these things have not been tested very much):
+`finish` (or presumably `f`) to step back out to the caller
+`rwatch numbers[3]` to run the program until numbers[3] is modified
+rstep and previous commands
