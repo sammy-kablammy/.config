@@ -134,6 +134,13 @@ There is also a window-local version of the quickfix list (the "location list").
 It's used in the same way as the quickfix list but all the commands use 'l'
 instead of 'c' at the beginning.
 
+# auto commands vs user commands
+- auto commands are run in event-driven way, for example, when a buffer is opened
+:h lua-guide-autocommand-create
+:h events
+- user commands are typed in vim's command prompt, like :HowdyYall
+:h `nvim_create_user_command()`
+
 # Extra notes
 To see the previous output of commands, use :messages
 
