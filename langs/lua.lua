@@ -116,6 +116,11 @@ showTypeInfo(type)          --> function
 -- Any extra arguments are simply ignored
 showTypeInfo("howdy howdy", "this string should be ignored")
 
+[[
+multiline string
+(it is long and stringy)
+]]
+
 -- on lua styling, you might want to use snake_case for functions and PascalCase
 -- for methods as in C#
 
