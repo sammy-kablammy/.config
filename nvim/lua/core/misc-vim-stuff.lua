@@ -37,6 +37,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
 })
 
+-- open help windows to the right instead of below
+vim.api.nvim_create_autocmd("BufWinEnter", {
+    pattern = { "*.txt" },
+    callback = function()
+        if vim.o.filetype == 'help' then vim.cmd.wincmd("L") end
+    end
+})
+
 -- If a search query includes caps then it's case-sensitive, else it's case-insensitive.
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
