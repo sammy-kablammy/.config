@@ -1,3 +1,8 @@
+-- alias to pretty print
+function P(args)
+    vim.print(args)
+end
+
 if vim.g.vscode then
     print("👀 hello vscoders")
     vim.keymap.set('n', 'j', 'gj')
