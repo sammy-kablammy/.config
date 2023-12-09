@@ -11,7 +11,7 @@ vim.keymap.set('n', '<c-f>', '')
 vim.keymap.set('i', '<c-a>', '')
 
 -- 'clear search'
-vim.keymap.set('n', '<leader>cs', '<cmd>noh<cr>')
+vim.keymap.set('n', '<leader>cs', '<cmd>:set hls!<cr>')
 
 -- movement should work how you expect even if a line is really long
 vim.keymap.set('n', 'j', 'gj')
