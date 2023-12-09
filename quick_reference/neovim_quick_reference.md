@@ -201,3 +201,7 @@ similar thing with insert mode and `gi`
 to match a newline, use \n
 to substitute with a newline, you need to use \r
 :s/endofline/\r/g
+
+TO FIX TREESITTER "error executing lua problem..." error
+(this usually appears opening a gitcommit file),
+run :TSUpdate
