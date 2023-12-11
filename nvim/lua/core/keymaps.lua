@@ -61,7 +61,7 @@ vim.keymap.set('n', '<leader>tt', '<cmd>tabs<cr>')
 
 -- more remaps
 vim.keymap.set('n', '<leader>w', '<cmd>:w<cr>')
-vim.keymap.set('n', '<leader>e', '<cmd>:edit<cr>')
+vim.keymap.set('n', '<leader>ed', '<cmd>:edit<cr>')
 -- vim.keymap.set('n', '<leader>so', '<cmd>:source<cr>')
 vim.keymap.set('n', '<leader>so', function()
     vim.cmd('source')
