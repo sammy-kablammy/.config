@@ -28,12 +28,12 @@ else
     vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
     require("lazy").setup({
+        -- pretty important plugins. in no particular order.
+        -- these are used all the time.
         {
-            "nvim-tree/nvim-tree.lua",
-            dependencies = {
-                'nvim-lua/plenary.nvim',
-                'nvim-tree/nvim-web-devicons'
-            },
+            "catppuccin/nvim",
+            name = "catppuccin",
+            priority = 1000
         },
         {
             'nvim-telescope/telescope.nvim',
@@ -62,16 +62,31 @@ else
             }
         },
         {
+            'windwp/nvim-autopairs',
+            event = "InsertEnter",
+            opts = {} -- this is equalent to setup({}) function
+        },
+        'nvim-lualine/lualine.nvim',
+        'numToStr/Comment.nvim',
+        'nvim-treesitter/nvim-treesitter',
+        'lewis6991/gitsigns.nvim',
+        "folke/neodev.nvim",
+
+        -- less important plugins. these might be specific to a single language.
+        -- or maybe they are plugins i'm trying to get away from/rewrite myself.
+        {
+            "nvim-tree/nvim-tree.lua",
+            dependencies = {
+                'nvim-lua/plenary.nvim',
+                'nvim-tree/nvim-web-devicons'
+            },
+        },
+        {
             "folke/which-key.nvim",
             init = function()
                 vim.o.timeout = true
                 vim.o.timeoutlen = 500
             end
-        },
-        {
-            "catppuccin/nvim",
-            name = "catppuccin",
-            priority = 1000
         },
         {
             'akinsho/bufferline.nvim',
@@ -84,17 +99,7 @@ else
                 'stevearc/dressing.nvim'
             },
         },
-        {
-            'windwp/nvim-autopairs',
-            event = "InsertEnter",
-            opts = {} -- this is equalent to setup({}) function
-        },
-        'nvim-lualine/lualine.nvim',
-        'nvim-treesitter/nvim-treesitter',
-        "folke/neodev.nvim",
-        'numToStr/Comment.nvim',
         'folke/todo-comments.nvim',
-        'lewis6991/gitsigns.nvim',
         'ThePrimeagen/vim-be-good',
         'simrat39/rust-tools.nvim',
         'jbyuki/nabla.nvim',
