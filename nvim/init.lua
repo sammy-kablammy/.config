@@ -84,6 +84,11 @@ else
                 'stevearc/dressing.nvim'
             },
         },
+        {
+            'windwp/nvim-autopairs',
+            event = "InsertEnter",
+            opts = {} -- this is equalent to setup({}) function
+        },
         'nvim-lualine/lualine.nvim',
         'nvim-treesitter/nvim-treesitter',
         "folke/neodev.nvim",
