@@ -205,3 +205,5 @@ to substitute with a newline, you need to use \r
 TO FIX TREESITTER "error executing lua problem..." error
 (this usually appears opening a gitcommit file),
 run :TSUpdate
+
+you can do :right to right-align text. :center and :left also exist.
