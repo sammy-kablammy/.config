@@ -68,7 +68,16 @@ else
                 vim.o.timeoutlen = 500
             end
         },
-        { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+        {
+            "catppuccin/nvim",
+            name = "catppuccin",
+            priority = 1000
+        },
+        {
+            'akinsho/bufferline.nvim',
+            version = "*",
+            dependencies = 'nvim-tree/nvim-web-devicons'
+        },
         'nvim-lualine/lualine.nvim',
         'nvim-treesitter/nvim-treesitter',
         "folke/neodev.nvim",
