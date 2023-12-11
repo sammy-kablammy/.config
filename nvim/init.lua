@@ -78,6 +78,12 @@ else
             version = "*",
             dependencies = 'nvim-tree/nvim-web-devicons'
         },
+        {
+            'ziontee113/icon-picker.nvim',
+            dependencies = {
+                'stevearc/dressing.nvim'
+            },
+        },
         'nvim-lualine/lualine.nvim',
         'nvim-treesitter/nvim-treesitter',
         "folke/neodev.nvim",
