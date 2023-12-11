@@ -207,3 +207,5 @@ TO FIX TREESITTER "error executing lua problem..." error
 run :TSUpdate
 
 you can do :right to right-align text. :center and :left also exist.
+
+hey, :h vim.ui is really neato. check it out sometime
