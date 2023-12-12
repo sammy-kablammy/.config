@@ -99,6 +99,11 @@ else
                 'stevearc/dressing.nvim'
             },
         },
+        {
+            "ThePrimeagen/harpoon",
+            branch = "harpoon2",
+            requires = { { "nvim-lua/plenary.nvim" } }
+        },
         'folke/todo-comments.nvim',
         'ThePrimeagen/vim-be-good',
         'simrat39/rust-tools.nvim',
