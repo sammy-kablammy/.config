@@ -13,7 +13,7 @@ keymap('n', '<c-f>', '')
 keymap('i', '<c-a>', '')
 
 -- toggle 'clear search'
-keymap('n', '<leader>cs', '<cmd>:set hls!<cr>')
+keymap('n', '<leader>cs', '<cmd>set hls!<cr>')
 
 -- movement should work how you expect even if a line is really long
 keymap('n', 'j', 'gj')
@@ -27,6 +27,9 @@ keymap('n', '<c-h>', '<c-w>h')
 keymap('n', '<c-j>', '<c-w>j')
 keymap('n', '<c-k>', '<c-w>k')
 keymap('n', '<c-l>', '<c-w>l')
+
+-- only
+keymap('n', '<leader>o', '<cmd>only<cr>')
 
 -- scroll up and down without getting disoriented
 keymap('n', '<c-d>', '<c-d>zz')
@@ -62,32 +65,31 @@ keymap('n', '<leader>tp', '<cmd>tabprevious<cr>')
 keymap('n', '<leader>tt', '<cmd>tabs<cr>')
 
 -- more remaps
-keymap('n', '<leader>w', '<cmd>:w<cr>')
-keymap('n', '<leader>ed', '<cmd>:edit<cr>')
--- keymap('n', '<leader>so', '<cmd>:source<cr>')
+keymap('n', '<leader>w', '<cmd>w<cr>')
+keymap('n', '<leader>ed', '<cmd>edit<cr>')
 keymap('n', '<leader>so', function()
     vim.cmd('source')
     print('sourced!')
 end)
 
 -- quickfix list
-keymap('n', '<leader>co', '<cmd>:copen<cr>')
-keymap('n', '<leader>cq', '<cmd>:cclose<cr>')
-keymap('n', '<leader>cf', '<cmd>:cfirst<cr>')
-keymap('n', '<leader>cl', '<cmd>:clast<cr>')
-keymap('n', '<leader>cn', '<cmd>:cn<cr>')
-keymap('n', '<leader>cp', '<cmd>:cp<cr>')
-keymap('n', ']t', '<cmd>:cn<cr>')
-keymap('n', '[t', '<cmd>:cp<cr>')
+keymap('n', '<leader>co', '<cmd>copen<cr>')
+keymap('n', '<leader>cq', '<cmd>cclose<cr>')
+keymap('n', '<leader>cf', '<cmd>cfirst<cr>')
+keymap('n', '<leader>cl', '<cmd>clast<cr>')
+keymap('n', '<leader>cn', '<cmd>cn<cr>')
+keymap('n', '<leader>cp', '<cmd>cp<cr>')
+keymap('n', ']t', '<cmd>cn<cr>')
+keymap('n', '[t', '<cmd>cp<cr>')
 
 -- "change inside ___" motions but reversed
-keymap('n', 'cr"', '?"<cr><cmd>:nohlsearch<cr>ci"')
-keymap('n', "cr'", "?'<cr><cmd>:nohlsearch<cr>ci'")
-keymap('n', 'cr`', '?`<cr><cmd>:nohlsearch<cr>ci`')
-keymap('n', 'cr(', '?(<cr><cmd>:nohlsearch<cr>ci(')
-keymap('n', 'cr[', '?[<cr><cmd>:nohlsearch<cr>ci[')
-keymap('n', 'cr{', '?{<cr><cmd>:nohlsearch<cr>ci{')
-keymap('n', 'cr<', '?<<cr><cmd>:nohlsearch<cr>ci<')
+keymap('n', 'cr"', '?"<cr><cmd>nohlsearch<cr>ci"')
+keymap('n', "cr'", "?'<cr><cmd>nohlsearch<cr>ci'")
+keymap('n', 'cr`', '?`<cr><cmd>nohlsearch<cr>ci`')
+keymap('n', 'cr(', '?(<cr><cmd>nohlsearch<cr>ci(')
+keymap('n', 'cr[', '?[<cr><cmd>nohlsearch<cr>ci[')
+keymap('n', 'cr{', '?{<cr><cmd>nohlsearch<cr>ci{')
+keymap('n', 'cr<', '?<<cr><cmd>nohlsearch<cr>ci<')
 
 -- add argument to function
 keymap('n', '<leader>a', '$F)i, ')

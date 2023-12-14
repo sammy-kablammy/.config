@@ -2,14 +2,14 @@
 -- this file is an amalgamation of lspconfig's guide and lsp-zero's guide
 
 -- Mason needs to be setup before your language servers
-require('mason').setup({})
-require('mason-lspconfig').setup({
+require('mason').setup{}
+require('mason-lspconfig').setup{
     ensure_installed = {
         'lua_ls',
         'jdtls',
-
+        'tsserver',
     },
-})
+}
 
 -- ***** modified from lspconfig's setup guide *****
 
@@ -21,7 +21,6 @@ lspconfig.marksman.setup {}
 lspconfig.jdtls.setup {}
 lspconfig.pyright.setup {}
 lspconfig.clangd.setup {}
-lspconfig.grammarly.setup {}
 lspconfig.rust_analyzer.setup {}
 
 -- Global mappings.
