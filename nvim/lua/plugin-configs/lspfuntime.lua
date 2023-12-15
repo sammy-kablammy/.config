@@ -2,8 +2,8 @@
 -- this file is an amalgamation of lspconfig's guide and lsp-zero's guide
 
 -- Mason needs to be setup before your language servers
-require('mason').setup{}
-require('mason-lspconfig').setup{
+require('mason').setup {}
+require('mason-lspconfig').setup {
     ensure_installed = {
         'lua_ls',
         'jdtls',
@@ -24,12 +24,15 @@ lspconfig.clangd.setup {}
 lspconfig.rust_analyzer.setup {}
 
 -- Global mappings.
+-- TODO read this
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 -- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<space>d', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', '<leader>m', vim.diagnostic.setloclist, {
+    desc = 'populate loclist from LSP'
+})
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -48,6 +51,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
         -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+        -- TODO read this
         -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
         -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
         -- vim.keymap.set('n', '<space>wl', function()
@@ -76,13 +80,12 @@ cmp.setup({
     },
     mapping = cmp.mapping.preset.insert({
         -- Enter key confirms completion item
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
         ['<Tab>'] = cmp.mapping.confirm({ select = true }),
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
-        -- Navigate between snippet placeholder
-        -- ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-        -- ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+        ['<C-l>'] = cmp.mapping.select_next_item({}),
+        ['<C-h>'] = cmp.mapping.select_prev_item({}),
 
         -- Scroll up and down in the completion documentation
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -98,3 +101,21 @@ cmp.setup({
         end,
     },
 })
+
+
+-- luasnip configurin'
+
+-- i don't know how to fully configure luasnips, but this is an example snippet.
+-- it only snippetifies itself if you press the hotkey (<c-k>). it doesn't
+-- appear in the autocompletion menu as of right now. :(
+-- i haven't yet gotten it to import vscode snippets
+local ls = require('luasnip')
+local s = ls.snippet
+local t = ls.text_node
+ls.add_snippets('lua', {
+    s('sample', t('-- this is a sample snippet'))
+})
+
+
+-- friendly-snippets configuration
+require("luasnip.loaders.from_vscode").lazy_load()
