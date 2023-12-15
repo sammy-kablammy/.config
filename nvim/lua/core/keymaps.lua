@@ -2,7 +2,7 @@
 
 -- <leader> needs to be set up in init.lua, right before setting up lazy!
 
--- if some keys aren't working, see :h :map-special-k, eys
+-- if some keys aren't working, see :h :map-special-keys
 
 local keymap = vim.keymap.set
 
@@ -45,10 +45,10 @@ keymap('n', '<leader>hb', '<cmd>vsplit ~/.config/quick_reference/bash_quick_refe
 keymap('n', '<leader>ht', '<cmd>vsplit ~/.config/quick_reference/tmux_quick_reference.md<cr>')
 keymap('n', '<leader>hg', '<cmd>vsplit ~/.config/quick_reference/git_quick_reference.md<cr>')
 
--- Buffer stuff
--- :( can't use tab because it thinks it's ctrl+i
--- keymap('n', '<tab>', '<cmd>bn<cr>')
-keymap('n', '<leader><tab>', '<cmd>bn<cr>')
+-- alternate file
+keymap('n', '<Tab>', '<c-^>')
+
+-- buffer stuff
 keymap('n', '<leader>bb', '<cmd>buffers<cr>')
 keymap('n', '<leader>bn', '<cmd>bn<cr>')
 keymap('n', '<leader>bp', '<cmd>bp<cr>')
