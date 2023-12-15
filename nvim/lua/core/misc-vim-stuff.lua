@@ -65,3 +65,4 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.mouse = ""
 vim.wo.signcolumn = "yes"
+vim.opt.wrapscan = false
