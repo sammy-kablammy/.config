@@ -6,6 +6,7 @@ use <c-^> (alternate file) more
 use the r and R motions more
 check out :options some time. it's pretty neato
 use :lua to easily test stuff
+use cit to change inside html tags
 
 ---
 
