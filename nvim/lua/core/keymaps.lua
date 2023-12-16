@@ -68,8 +68,8 @@ keymap('n', '<leader>tt', '<cmd>tabs<cr>')
 keymap('n', '<leader>w', '<cmd>w<cr>')
 keymap('n', '<leader>ed', '<cmd>edit<cr>')
 keymap('n', '<leader>so', function()
-    vim.cmd('source')
     print('sourced!')
+    vim.cmd('source')
 end)
 
 -- quickfix list
