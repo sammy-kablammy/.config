@@ -92,7 +92,7 @@ keymap('n', 'cr{', '?{<cr><cmd>nohlsearch<cr>ci{')
 keymap('n', 'cr<', '?<<cr><cmd>nohlsearch<cr>ci<')
 
 -- add argument to function
-keymap('n', '<leader>a', '$F)i, ')
+-- keymap('n', '<leader>a', '$F)i, ')
 
 -- put markdown headings into the quickfix list for easy navigation
 keymap('n', 'md', '<cmd>vimgrep /^\\#/ %<cr><cmd>copen<cr>')
