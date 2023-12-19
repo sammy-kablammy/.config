@@ -6,7 +6,11 @@
 
 local keymap = vim.keymap.set
 
+-- LSP bindings
 keymap('n', '<leader>li', '<cmd>LspInfo<cr>')
+
+-- escape terminal mode because the default binding makes no sense like what???
+keymap('t', '<Esc>', [[<C-\><C-n>]])
 
 -- remove annoying mappings
 keymap('n', '<c-f>', '')
