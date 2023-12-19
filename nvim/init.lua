@@ -70,7 +70,7 @@ else
         'numToStr/Comment.nvim',
         'nvim-treesitter/nvim-treesitter',
         'lewis6991/gitsigns.nvim',
-        "folke/neodev.nvim",
+        'folke/neodev.nvim',
 
         -- less important plugins. these might be specific to a single language.
         -- or maybe they are plugins i'm trying to get away from/rewrite myself.
@@ -102,12 +102,13 @@ else
         {
             "ThePrimeagen/harpoon",
             branch = "harpoon2",
-            requires = { { "nvim-lua/plenary.nvim" } }
+            dependencies = "nvim-lua/plenary.nvim"
         },
         'folke/todo-comments.nvim',
         'ThePrimeagen/vim-be-good',
         'simrat39/rust-tools.nvim',
         'jbyuki/nabla.nvim',
+        { 'echasnovski/mini.nvim', version = '*' },
 
         -- my custom plugins
         'sammy-kablammy/nvim_plugin_template',
