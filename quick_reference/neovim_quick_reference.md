@@ -7,6 +7,10 @@ use the r and R motions more
 check out :options some time. it's pretty neato
 use :lua to easily test stuff
 use cit to change inside html tags
+USE CODE ACTIONS <leader>ca
+use U motion to toggle the most recent change
+g; to go to previous change (also g, for newer change)
+gi to go to the previous 'insert to normal' transition location
 
 ---
 
@@ -143,6 +147,22 @@ instead of 'c' at the beginning.
 :h events
 - user commands are typed in vim's command prompt, like :HowdyYall
 :h `nvim_create_user_command()`
+
+# insert mode bindings
+Indent ('Tab') C-t
+De-indent ('Delete a tab') C-d
+Un-indent (remove all tabs) C-u
+
+Pop into normal mode for a single command, then back into insert mode:
+C-o
+
+To insert the vim representation of a special key, use C-v followed by that key.
+For example, typing C-v <enter> produces 
+This is useful for creating macros and commands and such
+
+Digraphs can be entered with C-k, but i currently have that replaced with a
+plugin that has searching functionality.
+For manual digraph entry, see :digraphs for a list of available symbols.
 
 # Extra notes
 To see the previous output of commands, use :messages
