@@ -7,6 +7,7 @@ ctrl + h acts like backspace
 ctrl + l acts like clear
 ctrl + j acts like enter
 ctrl + w acts like ctrl + backspace in normal text editors
+ctrl + b goes back a character, ctrl + f goes forward a character
 alt + leftarrow or alt + rightarrow act like ctrl + arrows in other text editors
 !! retypes the previous command. very useful for `sudo !!` when you forget sudo.
 $# holds the number of command line args
