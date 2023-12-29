@@ -112,7 +112,14 @@ else
 
         -- my custom plugins
         'sammy-kablammy/nvim_plugin_template',
-
+        {
+            'sammy-kablammy/simpletodo.nvim',
+            init = function()
+                require 'simpletodo'.setup {}
+            end
+        },
+        -- { dir = '~/my_neovim_plugins/showcase.nvim' },
+        -- { dir = '~/my_neovim_plugins/simpletodo.nvim' },
     })
 
     -- ...and these are my config files :)

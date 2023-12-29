@@ -28,12 +28,14 @@ vim.opt.showmode = false
 -- basically, you want 'r' enabled so that comments are continued in insert mode
 -- but you want 'o' disabled so that comments do not continue when using the 'o' motion
 -- also you need to use an autocmd because "vim.opt.formatoptions" gets overwritten somehow :(
+-- TODO clean this up
 vim.api.nvim_create_autocmd("BufEnter", {
     callback = function(args)
         vim.opt.formatoptions = "jcrql"
         if vim.bo.filetype == "markdown" then
             -- the 't' formatoption inserts line breaks on lines that are too long
             vim.opt.formatoptions = vim.opt.formatoptions + "t"
+            vim.opt.wrap = true
         end
     end
 })
