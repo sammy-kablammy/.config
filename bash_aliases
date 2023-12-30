@@ -26,6 +26,9 @@ mcd () {
     cd $1
 }
 
+# open tmux on startup
+if [ "$TMUX" = "" ]; then tmux; fi
+
 # use these lines to change manpage reader. (but nvim is much slower than less)
 # export MANPAGER='nvim +Man!'
 # export MANWIDTH=999
