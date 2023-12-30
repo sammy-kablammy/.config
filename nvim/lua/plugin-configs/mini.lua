@@ -104,46 +104,76 @@ vim.api.nvim_create_autocmd('User', {
         -- Add extra mappings from *MiniFiles-examples*
 
         -- open file in a vsplit (why isn't this built in to the plugin?)
-        vim.keymap.set('n', '<C-v>', function()
-            mini_files.go_in()
-            mini_files.close()
-            -- TODO assumes vsplit direction is rightward,
-            -- also assumes that <C-w>h uses the default binding,
-            -- also assumes that the previous buffer is the one you want on the
-            -- left
-            vim.cmd('vsplit')
-            -- pure sorcery is required to do ctrl keys within the :norm command
-            vim.cmd([[exe "norm $\<C-w>h"]])
-            vim.cmd('bp')
-            vim.cmd([[exe "norm $\<C-w>l"]])
-        end, { buffer = args.data.buf_id })
+        -- lol it is built in, it's at the bottom
+        -- vim.keymap.set('n', '<C-v>', function()
+        --     mini_files.go_in()
+        --     mini_files.close()
+        --     -- TODO assumes vsplit direction is rightward,
+        --     -- also assumes that <C-w>h uses the default binding,
+        --     -- also assumes that the previous buffer is the one you want on the
+        --     -- left
+        --     vim.cmd('vsplit')
+        --     -- pure sorcery is required to do ctrl keys within the :norm command
+        --     vim.cmd([[exe "norm $\<C-w>h"]])
+        --     vim.cmd('bp')
+        --     vim.cmd([[exe "norm $\<C-w>l"]])
+        -- end, { buffer = args.data.buf_id })
     end,
 })
 
--- this section comes from the mini-file.txt help file
-function enable_dotfiles_toggle()
-    local show_dotfiles = true
+-- the following sectiond come from the mini-file.txt help file
 
-    local filter_show = function(fs_entry) return true end
+--  Create mapping to show/hide dot-files
+local show_dotfiles = true
 
-    local filter_hide = function(fs_entry)
-        return not vim.startswith(fs_entry.name, '.')
-    end
+local filter_show = function() return true end
 
-    local toggle_dotfiles = function()
-        show_dotfiles = not show_dotfiles
-        local new_filter = show_dotfiles and filter_show or filter_hide
-        mini_files.refresh({ content = { filter = new_filter } })
-    end
-
-    vim.api.nvim_create_autocmd('User', {
-        pattern = 'MiniFilesBufferCreate',
-        callback = function(args)
-            local buf_id = args.data.buf_id
-            -- Tweak left-hand side of mapping to your liking
-            vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id })
-        end,
-    })
+local filter_hide = function(fs_entry)
+    return not vim.startswith(fs_entry.name, '.')
 end
 
-enable_dotfiles_toggle()
+local toggle_dotfiles = function()
+    show_dotfiles = not show_dotfiles
+    local new_filter = show_dotfiles and filter_show or filter_hide
+    mini_files.refresh({ content = { filter = new_filter } })
+end
+
+vim.api.nvim_create_autocmd('User', {
+    pattern = 'MiniFilesBufferCreate',
+    callback = function(args)
+        local buf_id = args.data.buf_id
+        -- Tweak left-hand side of mapping to your liking
+        vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id })
+    end,
+})
+
+-- actually, i can't get this to work
+-- TODO
+
+-- Create mappings to modify target window via split
+-- local map_split = function(buf_id, lhs, direction)
+--     local rhs = function()
+--         -- Make new window and set it as target
+--         local new_target_window
+--         vim.api.nvim_win_call(mini_files.get_target_window(), function()
+--             vim.cmd(direction .. ' split')
+--             new_target_window = vim.api.nvim_get_current_win()
+--         end)
+--
+--         mini_files.set_target_window(new_target_window)
+--     end
+--
+--     -- Adding `desc` will result into `show_help` entries
+--     local desc = 'Split ' .. direction
+--     vim.keymap.set('n', lhs, rhs, { buffer = buf_id, desc = desc })
+-- end
+--
+-- vim.api.nvim_create_autocmd('User', {
+--     pattern = 'MiniFilesBufferCreate',
+--     callback = function(args)
+--         local buf_id = args.data.buf_id
+--         -- Tweak keys to your liking
+--         map_split(buf_id, '<C-s>', 'belowright horizontal')
+--         map_split(buf_id, '<C-v>', 'belowright vertical')
+--     end,
+-- })
