@@ -3,6 +3,8 @@
 -- <leader> needs to be set up in init.lua, right before setting up lazy!
 
 -- if some keys aren't working, see :h :map-special-keys
+-- for example, <C-m> is treated as <Esc>. this will inevitably cost you tens of
+-- minutes of pain in the future when you will bind something to <C-m>.
 
 local keymap = vim.keymap.set
 
@@ -14,7 +16,9 @@ keymap('t', '<Esc>', [[<C-\><C-n>]])
 
 -- remove annoying mappings
 keymap('n', '<c-f>', '')
+keymap('n', '<c-b>', '')
 keymap('i', '<c-a>', '')
+keymap('n', '<c-q>', '')
 
 -- toggle 'clear search'
 keymap('n', '<leader>cs', '<cmd>set hls!<cr>')
@@ -99,6 +103,7 @@ keymap('n', 'cr<', '?<<cr><cmd>nohlsearch<cr>ci<')
 -- keymap('n', '<leader>a', '$F)i, ')
 
 -- put markdown headings into the quickfix list for easy navigation
+-- TODO just make this a separate plugin
 keymap('n', 'md', '<cmd>vimgrep /^\\#/ %<cr><cmd>copen<cr>')
 
 -- navigate between git merge conflict markers (do i use this?)

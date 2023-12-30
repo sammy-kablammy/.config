@@ -11,6 +11,7 @@ USE CODE ACTIONS <leader>ca
 use U motion to toggle the most recent change
 g; to go to previous change (also g, for newer change)
 gi to go to the previous 'insert to normal' transition location
+// to repeat the previous search
 
 ---
 

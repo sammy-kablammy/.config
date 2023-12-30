@@ -74,13 +74,13 @@ else
 
         -- less important plugins. these might be specific to a single language.
         -- or maybe they are plugins i'm trying to get away from/rewrite myself.
-        {
-            "nvim-tree/nvim-tree.lua",
-            dependencies = {
-                'nvim-lua/plenary.nvim',
-                'nvim-tree/nvim-web-devicons'
-            },
-        },
+        -- {
+        --     "nvim-tree/nvim-tree.lua",
+        --     dependencies = {
+        --         'nvim-lua/plenary.nvim',
+        --         'nvim-tree/nvim-web-devicons'
+        --     },
+        -- },
         {
             "folke/which-key.nvim",
             init = function()
