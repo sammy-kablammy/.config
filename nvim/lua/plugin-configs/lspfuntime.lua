@@ -1,27 +1,30 @@
 -- trying to do this on my own now. no more lsp-zero training wheels.
 -- this file is an amalgamation of lspconfig's guide and lsp-zero's guide
 
+local my_servers = {
+    'lua_ls',
+    'tsserver',
+    'jdtls',
+    'pyright',
+    'clangd',
+    'rust_analyzer',
+    'marksman',
+    -- 'efm', -- idk what this does and it seems to break vim help files
+}
+
 -- Mason needs to be setup before your language servers
 require('mason').setup {}
 require('mason-lspconfig').setup {
-    ensure_installed = {
-        'lua_ls',
-        'jdtls',
-        'tsserver',
-    },
+    ensure_installed = my_servers
 }
 
 -- ***** modified from lspconfig's setup guide *****
 
--- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.lua_ls.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.marksman.setup {}
-lspconfig.jdtls.setup {}
-lspconfig.pyright.setup {}
-lspconfig.clangd.setup {}
-lspconfig.rust_analyzer.setup {}
+
+for _, server in ipairs(my_servers) do
+    lspconfig[server].setup {}
+end
 
 -- Global mappings.
 -- TODO read this
@@ -65,7 +68,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- vim.keymap.set('n', '<f3>', function()
         --     vim.lsp.buf.format { async = true }
         -- end, opts)
-        vim.keymap.set('n', '<f3>', vim.lsp.buf.format)
+        -- vim.keymap.set('n', '<f3>', vim.lsp.buf.format)
 
         print("LSP successfully attached 😊")
     end,
@@ -119,3 +122,19 @@ ls.add_snippets('lua', {
 
 -- friendly-snippets configuration
 require("luasnip.loaders.from_vscode").lazy_load()
+
+
+-- conform.nvim configuration
+require("conform").setup({
+    formatters_by_ft = {
+        lua = { "stylua" },
+        -- Conform will run multiple formatters sequentially
+        python = { "isort", "black" },
+        -- Use a sub-list to run only the first available formatter
+        javascript = { { "prettierd", "prettier" } },
+        java = { "google-java-format" },
+        markdown = { "mdformat" }
+    },
+})
+
+vim.keymap.set('n', '<F3>', require 'conform'.format)
