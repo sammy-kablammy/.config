@@ -23,6 +23,7 @@ require('mini.move').setup({
     }
 })
 
+
 local mini_files = require('mini.files')
 
 -- vim.keymap.set('n', '<C-n>', function() require('mini.fi>es').open(nil, false) end)
@@ -177,3 +178,38 @@ vim.api.nvim_create_autocmd('User', {
 --         map_split(buf_id, '<C-v>', 'belowright vertical')
 --     end,
 -- })
+
+
+local mini_starter = require('mini.starter')
+
+mini_starter.setup({
+    items = {
+        mini_starter.sections.builtin_actions(),
+        mini_starter.sections.telescope(),
+        mini_starter.sections.recent_files(8, false),
+    },
+    content_hooks = {
+        mini_starter.gen_hook.adding_bullet('▷ '),
+        mini_starter.gen_hook.aligning('center', 'center'),
+        mini_starter.gen_hook.indexing('all', { 'Builtin actions', 'Telescope' }),
+    },
+})
+
+mini_starter.config.header = [[
+                       ____==========_______
+            _--____   |    | ""  " "|       \
+           /  )8}  ^^^| 0  |  =     |  o  0  |
+         </_ +-==B vvv|""  |  =     | '  "" "|
+            \_____/   |____|________|________|
+                     (_(  )\________/___(  )__)
+                       |\  \            /  /\
+                       | \  \          /  /\ \
+                       | |\  \        /  /  \ \
+                       (  )(  )       (  \   (  )
+                        \  / /        \  \   \  \
+                         \|  |\        \  \  |  |
+                          |  | )____    \  \ \  )___
+                          (  )  /  /    (  )  (/  /
+                         /___\ /__/     /___\ /__/
+                           The AT-AT, By Core21
+     (https://www.asciiart.website/index.php?art=movies/star%20wars) ]]
