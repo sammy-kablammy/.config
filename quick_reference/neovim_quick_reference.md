@@ -1,18 +1,6 @@
 NEOVIM QUICK REFERENCE
 Quickly navigate this file by matching regex /^\#/ with the vim quickfix list
 
-# REMINDERS !!!!!!
-use <c-^> (alternate file) more
-use the r and R motions more
-check out :options some time. it's pretty neato
-use :lua to easily test stuff
-use cit to change inside html tags
-USE CODE ACTIONS <leader>ca
-use U motion to toggle the most recent change
-g; to go to previous change (also g, for newer change)
-gi to go to the previous 'insert to normal' transition location
-// to repeat the previous search
-
 ---
 
 # Install neovim (this is harder than it should be)
@@ -24,9 +12,24 @@ chmod u+x nvim
 mv nvim /usr/bin
 ```
 
-If the appimage doesn't work, you'll have to build from source.
+(You may need to install `libfuse2`)
+(also try `./nvim --appimage-extract-and-run` (make an alias for this!))
+
+If the appimage doesn't work, you might have to build from source.
 Not too complicated - just follow the instructions on the neovim github, making sure
 to consider installing it in the way that allows for uninstalling.
+
+# REMINDERS !!!!!!
+use <c-^> (alternate file) more
+use the r and R motions more
+check out :options some time. it's pretty neato
+use :lua to easily test stuff
+use cit to change inside html tags
+USE CODE ACTIONS <leader>ca
+use U motion to toggle the most recent change
+g; to go to previous change (also g, for newer change)
+gi to go to the previous 'insert to normal' transition location
+// to repeat the previous search
 
 # Windows installation
 The default location for init.lua is AppData/Local/nvim/init.lua.

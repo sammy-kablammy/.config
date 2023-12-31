@@ -3,6 +3,14 @@
 explanations of common git commands because they are named terribly.
 i'm considering restructuring this file to be based on use case instead of command
 
+# pushing and branches summary
+because i am clearly not utilizing branches enough
+basically just stop doing `git push -u origin main` when setting up new repos.
+this way, you'll have to specify the upstream branch on every push.
+to see which local branches push to which upstream branches, do `git branch -vv`
+(it might just be wise to always create a dummy "make new branch" commit to set
+the upstream branch so you don't forget later)
+
 # misc tips
 see a more compact git log:
 * git log --oneline

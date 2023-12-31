@@ -25,3 +25,4 @@
     fss = "!f() { git fetch && git status --short; }; f"
     dt = "difftool"
     mt = "mergetool"
+    b = "branch -vv"
