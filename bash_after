@@ -1,0 +1,9 @@
+# source this file at the bottom of your bashrc
+
+# shortens the path shown in the command prompt
+export PROMPT_DIRTRIM=2
+
+# pink version
+export PS1='\e[35m\u\e[0m:\e[34m\w\e[0m$ '
+
+# vim: set filetype=sh:
