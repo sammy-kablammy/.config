@@ -9,6 +9,7 @@ local my_servers = {
     'clangd',
     'rust_analyzer',
     'marksman',
+    'dockerls'
     -- 'efm', -- idk what this does and it seems to break vim help files
 }
 

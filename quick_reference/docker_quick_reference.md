@@ -1,3 +1,6 @@
+# use podman instead
+it's a drop-in replacement and it doesn't require docker desktop (nice for WSL)
+
 # docker? i barely even know her
 
 `docker run ubuntu` will automatically install an ubuntu image
@@ -7,6 +10,25 @@ something.
 `docker run -it ubuntu` will run in "interactive mode," keeping it running.
 
 you'll need to do `apt update` because the default apt list is VERY short.
+
+if you just want to install an image without running it, do
+`docker search <name>` to find the one you want, then do `docker pull <name>`
+
+`docker image ls` lists installed images (duh)
+
+# why are my colors broken? 😠
+
+use -e to set an environment variable from the command line
+
+- docker run -it -e "TERM=xterm-256color" ubuntu
+- PS1='\\e\[92m\\u\\e\[0m@\\e\[94m\\h\\e\[0m:\\e\[35m\\w\\e\[0m '
+  alternatively, you can use a dockerfile
+
+```Dockerfile
+FROM ubuntu
+ENV TERM=xterm-256color
+RUN echo "PS1='\e[92m\u\e[0m@\e[94m\h\e[0m:\e[35m\w\e[0m '" >> /root/.bashrc
+```
 
 # alpine notes
 

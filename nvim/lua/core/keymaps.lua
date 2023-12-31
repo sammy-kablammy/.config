@@ -53,6 +53,7 @@ keymap('n', '<leader>hn', '<cmd>vsplit ~/.config/quick_reference/neovim_quick_re
 keymap('n', '<leader>hb', '<cmd>vsplit ~/.config/quick_reference/bash_quick_reference.md<cr>')
 keymap('n', '<leader>ht', '<cmd>vsplit ~/.config/quick_reference/tmux_quick_reference.md<cr>')
 keymap('n', '<leader>hg', '<cmd>vsplit ~/.config/quick_reference/git_quick_reference.md<cr>')
+keymap('n', '<leader>hd', '<cmd>vsplit ~/.config/quick_reference/docker_quick_reference.md<cr>')
 
 -- alternate file
 keymap('n', '<Tab>', '<c-^>')
