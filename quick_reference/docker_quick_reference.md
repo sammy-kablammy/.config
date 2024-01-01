@@ -36,6 +36,9 @@ RUN echo "PS1='\e[92m\u\e[0m@\e[94m\h\e[0m:\e[35m\w\e[0m '" >> /root/.bashrc
 - the shell is busybox ash, not bash.
   busybox is a lightweight GNU coreutils alternative.
 
+# leave a container without stopping
+ctrl+p ctrl+q
+
 # reattach to a stopped container
 
 accidentally leave your container? it hasn't disappeared; it just stopped.
