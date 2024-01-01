@@ -2,15 +2,20 @@
 -- this file is an amalgamation of lspconfig's guide and lsp-zero's guide
 
 local my_servers = {
+    -- LSPs that buckle my shoe
     'lua_ls',
     'tsserver',
+    'biome',
     'jdtls',
     'pyright',
     'clangd',
+
+    -- don't really need these but i'll keep em around
     'rust_analyzer',
-    'marksman',
-    'dockerls'
-    -- 'efm', -- idk what this does and it seems to break vim help files
+    'dockerls',
+
+    -- 'ltex', -- no
+    -- 'remark_ls', no
 }
 
 -- Mason needs to be setup before your language servers
@@ -66,9 +71,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<f2>', vim.lsp.buf.rename, opts)
         vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-        -- vim.keymap.set('n', '<f3>', function()
-        --     vim.lsp.buf.format { async = true }
-        -- end, opts)
+        vim.keymap.set('n', '<f3>', function()
+            vim.lsp.buf.format { async = true }
+        end, opts)
         -- vim.keymap.set('n', '<f3>', vim.lsp.buf.format)
 
         print("LSP successfully attached 😊")
@@ -126,16 +131,16 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 
 -- conform.nvim configuration
-require("conform").setup({
-    formatters_by_ft = {
-        lua = { "stylua" },
-        -- Conform will run multiple formatters sequentially
-        python = { "isort", "black" },
-        -- Use a sub-list to run only the first available formatter
-        javascript = { { "prettierd", "prettier" } },
-        java = { "google-java-format" },
-        markdown = { "mdformat" }
-    },
-})
-
-vim.keymap.set('n', '<F3>', require 'conform'.format)
+-- require("conform").setup({
+--     formatters_by_ft = {
+--         lua = { "stylua" },
+--         -- Conform will run multiple formatters sequentially
+--         python = { "isort", "black" },
+--         -- Use a sub-list to run only the first available formatter
+--         javascript = { { "prettierd", "prettier" } },
+--         java = { "google-java-format" },
+--         markdown = { "mdformat" }
+--     },
+-- })
+--
+-- vim.keymap.set('n', '<F3>', require 'conform'.format)

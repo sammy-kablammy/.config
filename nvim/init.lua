@@ -3,6 +3,10 @@ function P(args)
     vim.print(args)
 end
 
+function fmt()
+    vim.lsp.buf.format()
+end
+
 if vim.g.vscode then
     print("👀 hello vscoders")
     vim.keymap.set('n', 'j', 'gj')
@@ -61,10 +65,10 @@ else
                 }
             }
         },
-        {
-            'stevearc/conform.nvim',
-            opts = {},
-        },
+        -- {
+        --     'stevearc/conform.nvim',
+        --     opts = {},
+        -- },
         {
             'windwp/nvim-autopairs',
             event = "InsertEnter",
@@ -75,6 +79,23 @@ else
         'nvim-treesitter/nvim-treesitter',
         'lewis6991/gitsigns.nvim',
         'folke/neodev.nvim',
+        {
+            'nvimtools/none-ls.nvim',
+            config = function()
+                local null_ls = require("null-ls")
+                null_ls.setup({
+                    -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
+                    sources = {
+                        null_ls.builtins.code_actions.eslint_d,
+                        null_ls.builtins.formatting.prettierd, -- does md too!
+                        null_ls.builtins.formatting.clang_format,
+                        null_ls.builtins.formatting.black,
+
+                        -- null_ls.builtins.formatting.stylua, -- no
+                    },
+                })
+            end
+        },
 
         -- less important plugins. these might be specific to a single language.
         -- or maybe they are plugins i'm trying to get away from/rewrite myself.
