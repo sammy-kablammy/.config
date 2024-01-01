@@ -97,6 +97,61 @@ else
             end
         },
 
+        -- ##### NEW SNIPPET STUFF
+        {
+            {
+                "L3MON4D3/LuaSnip",
+                lazy = false,
+                dependencies = {
+                    "rafamadriz/friendly-snippets",
+                    "saadparwaiz1/cmp_luasnip",
+                },
+                config = function()
+                    require("luasnip.loaders.from_vscode").lazy_load()
+                end,
+            },
+            {
+                "hrsh7th/cmp-nvim-lsp",
+                lazy = false,
+                config = true,
+            },
+            {
+                "hrsh7th/nvim-cmp",
+                lazy = false,
+                config = function()
+                    local cmp = require("cmp")
+                    local ls = require('luasnip')
+                    cmp.setup({
+                        window = {
+                            documentation = cmp.config.window.bordered(),
+                            -- completion = cmp.config.window.bordered(),
+                        },
+                        snippet = {
+                            expand = function(args)
+                                ls.lsp_expand(args.body)
+                            end,
+                        },
+                        mapping = cmp.mapping.preset.insert({
+                            -- (C-n triggers the completion menu)
+                            ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+                            ["<C-e>"] = cmp.mapping.abort(),
+                            ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+                            ["<C-d>"] = cmp.mapping.scroll_docs(4),
+                            -- what is this supposed to do
+                            -- ["<C-y>"] = cmp.mapping.complete(),
+                        }),
+                        sources = cmp.config.sources({
+                            { name = "nvim_lsp" },
+                            { name = "luasnip" },
+                        }, {
+                            { name = "buffer" },
+                        }),
+                    })
+                end,
+            },
+        },
+        -- ##### okay that's the new snippet stuff
+
         -- less important plugins. these might be specific to a single language.
         -- or maybe they are plugins i'm trying to get away from/rewrite myself.
         -- {

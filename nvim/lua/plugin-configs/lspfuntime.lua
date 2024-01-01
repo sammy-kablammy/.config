@@ -6,6 +6,7 @@ local my_servers = {
     'lua_ls',
     'tsserver',
     'biome',
+    'cssls',
     'jdtls',
     'pyright',
     'clangd',
@@ -81,53 +82,53 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- ***** modified from lsp-zero's "you might not need LSP zero" guide *****
-local cmp = require('cmp')
-
-cmp.setup({
-    sources = {
-        { name = 'nvim_lsp' },
-    },
-    mapping = cmp.mapping.preset.insert({
-        -- Enter key confirms completion item
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
-        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-
-        ['<C-l>'] = cmp.mapping.select_next_item({}),
-        ['<C-h>'] = cmp.mapping.select_prev_item({}),
-
-        -- Scroll up and down in the completion documentation
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
-
-        -- Ctrl + space triggers completion menu
-        -- THIS CONFLICTS WITH TMUX :( USE <prefix>C-b to bypass
-        ['<C-Space>'] = cmp.mapping.complete(),
-    }),
-    snippet = {
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-        end,
-    },
-})
-
-
--- luasnip configurin'
-
--- i don't know how to fully configure luasnips, but this is an example snippet.
--- it only snippetifies itself if you press the hotkey (<c-k>). it doesn't
--- appear in the autocompletion menu as of right now. :(
--- i haven't yet gotten it to import vscode snippets
-local ls = require('luasnip')
-local s = ls.snippet
-local t = ls.text_node
-ls.add_snippets('lua', {
-    s('sample', t('-- this is a sample snippet'))
-})
-
-
--- friendly-snippets configuration
-require("luasnip.loaders.from_vscode").lazy_load()
+-- local cmp = require('cmp')
+--
+-- cmp.setup({
+--     sources = {
+--         { name = 'nvim_lsp' },
+--     },
+--     mapping = cmp.mapping.preset.insert({
+--         -- Enter key confirms completion item
+--         ['<CR>'] = cmp.mapping.confirm({ select = false }),
+--         ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+--         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+--
+--         ['<C-l>'] = cmp.mapping.select_next_item({}),
+--         ['<C-h>'] = cmp.mapping.select_prev_item({}),
+--
+--         -- Scroll up and down in the completion documentation
+--         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+--         ['<C-d>'] = cmp.mapping.scroll_docs(4),
+--
+--         -- Ctrl + space triggers completion menu
+--         -- THIS CONFLICTS WITH TMUX :( USE <prefix>C-b to bypass
+--         ['<C-Space>'] = cmp.mapping.complete(),
+--     }),
+--     snippet = {
+--         expand = function(args)
+--             require('luasnip').lsp_expand(args.body)
+--         end,
+--     },
+-- })
+--
+--
+-- -- luasnip configurin'
+--
+-- -- i don't know how to fully configure luasnips, but this is an example snippet.
+-- -- it only snippetifies itself if you press the hotkey (<c-k>). it doesn't
+-- -- appear in the autocompletion menu as of right now. :(
+-- -- i haven't yet gotten it to import vscode snippets
+-- local ls = require('luasnip')
+-- local s = ls.snippet
+-- local t = ls.text_node
+-- ls.add_snippets('lua', {
+--     s('sample', t('-- this is a sample snippet'))
+-- })
+--
+--
+-- -- friendly-snippets configuration
+-- require("luasnip.loaders.from_vscode").lazy_load()
 
 
 -- conform.nvim configuration
