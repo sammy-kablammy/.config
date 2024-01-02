@@ -20,6 +20,7 @@ keymap('n', '<c-f>', '')
 keymap('n', '<c-b>', '')
 keymap('i', '<c-a>', '')
 keymap('n', '<c-q>', '')
+keymap('n', '?', '') -- ?query is just /query followed by N
 
 -- toggle 'clear search'
 keymap('n', '<leader>cs', '<cmd>set hls!<cr>')
@@ -27,6 +28,7 @@ keymap('n', '<leader>cs', '<cmd>set hls!<cr>')
 -- movement should work how you expect even if a line is really long
 keymap('n', 'j', 'gj')
 keymap('n', 'k', 'gk')
+-- TODO put these in a "if wrap is enabled" block or something
 -- keymap('n', '0', 'g0')
 -- keymap('n', '$', 'g$')
 -- keymap('n', '^', 'g^')

@@ -11,6 +11,7 @@ vim.opt.shiftwidth = 4
 
 -- disable line wrapping (wrapping causes lines to be displayed on multiple
 -- lines, it won't insert any linebreaks)
+-- NOTE: the 'wrap' setting is 'soft' wrap. it is visual and won't alter text
 vim.opt.wrap = false
 vim.opt.breakindent = true
 -- break up text onto the next line after this many characters
