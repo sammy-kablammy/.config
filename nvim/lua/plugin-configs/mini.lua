@@ -102,6 +102,10 @@ vim.api.nvim_create_autocmd('User', {
         map_buf('<C-c>', mini_files.close)
         map_buf('<C-n>', mini_files.close)
 
+        -- i keep accidentally pressing C-j and C-k and it closes the window lol
+        map_buf('<C-j>', function() end)
+        map_buf('<C-k>', function() end)
+
         -- Add extra mappings from *MiniFiles-examples*
 
         -- open file in a vsplit (why isn't this built in to the plugin?)
@@ -180,36 +184,36 @@ vim.api.nvim_create_autocmd('User', {
 -- })
 
 
-local mini_starter = require('mini.starter')
-
-mini_starter.setup({
-    items = {
-        mini_starter.sections.builtin_actions(),
-        mini_starter.sections.telescope(),
-        mini_starter.sections.recent_files(8, false),
-    },
-    content_hooks = {
-        mini_starter.gen_hook.adding_bullet('▷ '),
-        mini_starter.gen_hook.aligning('center', 'center'),
-        mini_starter.gen_hook.indexing('all', { 'Builtin actions', 'Telescope' }),
-    },
-})
-
-mini_starter.config.header = [[
-                       ____==========_______
-            _--____   |    | ""  " "|       \
-           /  )8}  ^^^| 0  |  =     |  o  0  |
-         </_ +-==B vvv|""  |  =     | '  "" "|
-            \_____/   |____|________|________|
-                     (_(  )\________/___(  )__)
-                       |\  \            /  /\
-                       | \  \          /  /\ \
-                       | |\  \        /  /  \ \
-                       (  )(  )       (  \   (  )
-                        \  / /        \  \   \  \
-                         \|  |\        \  \  |  |
-                          |  | )____    \  \ \  )___
-                          (  )  /  /    (  )  (/  /
-                         /___\ /__/     /___\ /__/
-                           The AT-AT, By Core21
-     (https://www.asciiart.website/index.php?art=movies/star%20wars) ]]
+-- local mini_starter = require('mini.starter')
+--
+-- mini_starter.setup({
+--     items = {
+--         mini_starter.sections.builtin_actions(),
+--         mini_starter.sections.telescope(),
+--         mini_starter.sections.recent_files(8, false),
+--     },
+--     content_hooks = {
+--         mini_starter.gen_hook.adding_bullet('▷ '),
+--         mini_starter.gen_hook.aligning('center', 'center'),
+--         mini_starter.gen_hook.indexing('all', { 'Builtin actions', 'Telescope' }),
+--     },
+-- })
+--
+-- mini_starter.config.header = [[
+--                        ____==========_______
+--             _--____   |    | ""  " "|       \
+--            /  )8}  ^^^| 0  |  =     |  o  0  |
+--          </_ +-==B vvv|""  |  =     | '  "" "|
+--             \_____/   |____|________|________|
+--                      (_(  )\________/___(  )__)
+--                        |\  \            /  /\
+--                        | \  \          /  /\ \
+--                        | |\  \        /  /  \ \
+--                        (  )(  )       (  \   (  )
+--                         \  / /        \  \   \  \
+--                          \|  |\        \  \  |  |
+--                           |  | )____    \  \ \  )___
+--                           (  )  /  /    (  )  (/  /
+--                          /___\ /__/     /___\ /__/
+--                            The AT-AT, By Core21
+--      (https://www.asciiart.website/index.php?art=movies/star%20wars) ]]
