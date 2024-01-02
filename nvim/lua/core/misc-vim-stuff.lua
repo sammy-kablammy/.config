@@ -66,6 +66,6 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 5
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 vim.wo.signcolumn = "yes"
 vim.opt.wrapscan = false
