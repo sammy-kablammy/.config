@@ -24,12 +24,12 @@ require('lualine').setup {
         lualine_c = {
             {
                 'filename',
-                path = 0
+                path = 4
             }
         },
         lualine_x = { 'encoding', 'fileformat' },
         lualine_y = { 'filetype' },
-        lualine_z = { 'location' }
+        lualine_z = { 'progress', 'location' }
     },
     inactive_sections = {
         lualine_a = {},
