@@ -21,6 +21,7 @@ neofetch does the cool ascii art thing
 to bypass an alias, prepend the command with a backslash
 to open a file as hex/binary, use `xxd myfile` or `xxd -b myfile`
 to check a checksum, do `sha256sum <filename>`
+!123 to open history number 123 (you'll need to know your history to use this)
 
 # symlink
 to link from one location to another (particularly useful with WSL), use `ln`

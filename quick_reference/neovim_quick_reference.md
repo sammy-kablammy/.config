@@ -30,6 +30,8 @@ use U motion to toggle the most recent change
 g; to go to previous change (also g, for newer change)
 gi to go to the previous 'insert to normal' transition location
 // to repeat the previous search
+beyond * and #, use g* and g# (more fuzzy). example: * on 'the' --> 'there'
+^a and ^x can be prefixed with numbers i.e. 5^a on the number 10 --> 15
 
 # Windows installation
 The default location for init.lua is AppData/Local/nvim/init.lua.
@@ -168,6 +170,35 @@ Digraphs can be entered with C-k, but i currently have that replaced with a
 plugin that has searching functionality.
 For manual digraph entry, see :digraphs for a list of available symbols.
 
+# vim registers
+
+## tips
+always select the register using "<reg> BEFORE storing in it / pasting from it
+- "0 is useful
+
+## all the registers
+
+- the " register is the unnamed register. it's the default register used with
+  motions like ydcsx
+- 26 alphabetic registers. you can use either "A or "a but lowercase will
+  replace the register content while uppercase will append to it
+- the - register is the 'small delete' register. any deletion that is smaller
+  than a line will go here. (deletions 1 line or longer go to number registers)
+- number 0 is always the most recently yanked text.
+- number 1 is the most recently deleted text (unless you specify another reg or
+  it's shorter than one line, causing it to go into the - register instead)
+- numbers 2 through 9 are just history for the "1 register. when the contents of
+  "1 are replaced, they go to 2, then to 3, and so on.
+- the + register is the system clipboard, though neovim supports shift+ctrl+v
+- the * register is another kind of system clipboard. idk just use + instead.
+- the : register contains the most recently used command
+- the . register contains the most recently inserted text
+- the % register is the name of the current file (relative to vim's cwd)
+- the # register is the name of the current alternate file (full path)
+- the # register contains the most recent search
+- the _ is the black hole register. use this when a script or plugin edits some
+  text and you don't want to mess up the user's registers
+
 # Extra notes
 To see the previous output of commands, use :messages
 
@@ -216,6 +247,8 @@ when in INSERT or COMMAND mode, you can use <C-r> to paste the contents of a
 register. this is useful for copying some stuff, then pasting it into the =
 command, which will output the numeric result
 
+example:   :^r=123%5   outputs 3
+
 in fact, this is just useful everywhere.
 use ctrl+r in command mode to access registers
 
@@ -238,3 +271,5 @@ hey, :h vim.ui is really neato. check it out sometime
 g<c-g> will show the word count
 
 use a | to run multiple vim commands. kinda like bash ;
+
+ga will show the codepoint value of the character under the cursor
