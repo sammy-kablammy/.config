@@ -181,8 +181,11 @@ else
         },
         {
             "ThePrimeagen/harpoon",
-            branch = "harpoon2",
-            dependencies = "nvim-lua/plenary.nvim"
+            branch = "harpoon2", -- TODO check back when harpoon2 is finished
+            dependencies = {
+                "nvim-lua/plenary.nvim",
+                'nvim-telescope/telescope.nvim',
+            }
         },
         'folke/todo-comments.nvim',
         'ThePrimeagen/vim-be-good',

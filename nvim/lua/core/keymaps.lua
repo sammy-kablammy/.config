@@ -60,6 +60,9 @@ keymap('n', '<leader>hd', '<cmd>vsplit ~/.config/quick_reference/docker_quick_re
 -- alternate file
 keymap('n', '<Tab>', '<c-^>')
 
+-- 'go here' - change vim directory to the current buffer's path
+keymap('n', '<leader>gh', function() vim.cmd('cd %:p:h') end)
+
 -- buffer stuff
 keymap('n', '<leader>bb', '<cmd>buffers<cr>')
 keymap('n', '<leader>bn', '<cmd>bn<cr>')
@@ -84,7 +87,8 @@ keymap('n', '<leader>so', function()
     vim.cmd('source')
 end)
 
--- quickfix list
+-- quickfix list -- TODO dear god sort out these keymaps
+keymap('n', '<leader>qf', '<cmd>copen<cr>')
 keymap('n', '<leader>co', '<cmd>copen<cr>')
 keymap('n', '<leader>cq', '<cmd>cclose<cr>')
 keymap('n', '<leader>cf', '<cmd>cfirst<cr>')
