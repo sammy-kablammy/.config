@@ -31,6 +31,8 @@ else
 
     vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
+    -- note: you can do config = true and lazy will do default plugin setup
+
     require("lazy").setup({
         -- pretty important plugins. in no particular order.
         -- these are used all the time.
@@ -66,36 +68,16 @@ else
             }
         },
         -- {
-        --     'stevearc/conform.nvim',
-        --     opts = {},
+        --     'windwp/nvim-autopairs',
+        --     event = "InsertEnter",
+        --     opts = {} -- this is equalent to setup({}) function
         -- },
-        {
-            'windwp/nvim-autopairs',
-            event = "InsertEnter",
-            opts = {} -- this is equalent to setup({}) function
-        },
         'nvim-lualine/lualine.nvim',
         'numToStr/Comment.nvim',
         'nvim-treesitter/nvim-treesitter',
         'lewis6991/gitsigns.nvim',
         'folke/neodev.nvim',
-        {
-            'nvimtools/none-ls.nvim',
-            config = function()
-                local null_ls = require("null-ls")
-                null_ls.setup({
-                    -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
-                    sources = {
-                        null_ls.builtins.code_actions.eslint_d,
-                        null_ls.builtins.formatting.prettierd, -- does md too!
-                        null_ls.builtins.formatting.clang_format,
-                        null_ls.builtins.formatting.black,
-
-                        -- null_ls.builtins.formatting.stylua, -- no
-                    },
-                })
-            end
-        },
+        'nvimtools/none-ls.nvim',
 
         -- ##### NEW SNIPPET STUFF
         {
@@ -106,9 +88,6 @@ else
                     "rafamadriz/friendly-snippets",
                     "saadparwaiz1/cmp_luasnip",
                 },
-                config = function()
-                    require("luasnip.loaders.from_vscode").lazy_load()
-                end,
             },
             {
                 "hrsh7th/cmp-nvim-lsp",
@@ -118,36 +97,14 @@ else
             {
                 "hrsh7th/nvim-cmp",
                 lazy = false,
-                config = function()
-                    local cmp = require("cmp")
-                    local ls = require('luasnip')
-                    cmp.setup({
-                        window = {
-                            documentation = cmp.config.window.bordered(),
-                            -- completion = cmp.config.window.bordered(),
-                        },
-                        snippet = {
-                            expand = function(args)
-                                ls.lsp_expand(args.body)
-                            end,
-                        },
-                        mapping = cmp.mapping.preset.insert({
-                            -- (C-n triggers the completion menu)
-                            ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-                            ["<C-e>"] = cmp.mapping.abort(),
-                            ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-                            ["<C-d>"] = cmp.mapping.scroll_docs(4),
-                            -- what is this supposed to do
-                            -- ["<C-y>"] = cmp.mapping.complete(),
-                        }),
-                        sources = cmp.config.sources({
-                            { name = "nvim_lsp" },
-                            { name = "luasnip" },
-                        }, {
-                            { name = "buffer" },
-                        }),
-                    })
-                end,
+            },
+        },
+        {
+            "jay-babu/mason-null-ls.nvim",
+            event = { "BufReadPre", "BufNewFile" },
+            dependencies = {
+                "williamboman/mason.nvim",
+                "nvimtools/none-ls.nvim",
             },
         },
         -- ##### okay that's the new snippet stuff
