@@ -1,5 +1,7 @@
 local builtin = require('telescope.builtin')
 
+-- make sure you have ripgrep installed
+
 -- you can use 'builtin.builtin' to find builtin pickers
 
 local function map(lhs, rhs, desc)
