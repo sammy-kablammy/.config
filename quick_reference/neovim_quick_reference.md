@@ -143,9 +143,14 @@ Find all instances of 'foo' in all python and cpp files in the cwd:
 
 - :vimgrep /foo/ *.py *.cpp
 
+Search everything in the lua directory, recursively into subdirectories
+- :vim /findme/ lua/**
+
 There is also a window-local version of the quickfix list (the "location list").
 It's used in the same way as the quickfix list but all the commands use 'l'
 instead of 'c' at the beginning.
+
+vim stores multiple qf lists. navigate your history using :colder and :cnewer
 
 # auto commands vs user commands
 - auto commands are run in event-driven way, for example, when a buffer is opened
