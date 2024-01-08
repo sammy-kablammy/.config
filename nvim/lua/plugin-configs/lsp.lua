@@ -110,8 +110,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
                     ["end"] = vim.api.nvim_buf_get_mark(0, ">"),
                 }
             })
-            vim.cmd('echo "hello"')
         end)
+        vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
 
         -- print("LSP successfully attached 😊")
     end,

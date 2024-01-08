@@ -21,6 +21,7 @@ keymap('n', '<c-b>', '')
 keymap('i', '<c-a>', '')
 keymap('n', '<c-q>', '')
 keymap('n', '?', '') -- ?query is just /query followed by N
+keymap('n', 'U', '')
 
 -- toggle 'clear search'
 keymap('n', '<leader>cs', '<cmd>set hls!<cr>')
